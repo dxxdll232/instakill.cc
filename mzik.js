@@ -1,49 +1,91 @@
-const audio = document.getElementById("audio");
-const playPauseButton = document.getElementById("playPauseButton");
-const songInfo = document.getElementById("songInfo");
-const artistElement = document.getElementById("artist");
-const songTitleElement = document.getElementById("songTitle");
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
 
-const playlist = [
-    { src: "song1.mp3", artist: "Artist 1", title: "Song 1" },
-    { src: "song2.mp3", artist: "Artist 2", title: "Song 2" },
-    { src: "song3.mp3", artist: "Artist 3", title: "Song 3" }
+var audio = document.getElementById("audio");
+var playPauseButton = document.getElementById("playPauseButton");
+var audioFiles = [
+        {
+        src: "https://web.archive.org/web/20241006213336/https://files.catbox.moe/xnwimc.mp3",
+        artist: "Immortal Technique",
+        song: "Dance With the Devil"
+        },
 ];
 
-let currentSongIndex = 0;
+var artist = document.getElementById("artist");
+var songTitle = document.getElementById("songTitle");
 
-function loadSong(index) {
-    audio.src = playlist[index].src;
-    artistElement.textContent = playlist[index].artist;
-    songTitleElement.textContent = playlist[index].title;
+var shuffledAudioFiles = shuffleArray(audioFiles);
+var currentAudioIndex = 0;
+
+audio.addEventListener("ended", function() {
+    nextAudio();
+});
+
+function playMedia() {
+    audio.play();
+    document.getElementById("overlays").classList.add("fade-out");
 }
 
 function togglePlayPause() {
     if (audio.paused) {
         audio.play();
-        playPauseButton.innerHTML = '<img src="pause.png">';
+        playPauseButton.innerHTML = "<img src='pause.png'>";
     } else {
         audio.pause();
-        playPauseButton.innerHTML = '<img src="play.png">';
+        playPauseButton.innerHTML = "<img src='play.png'>";
     }
 }
 
-function previousAudio() {
-    currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
-    loadSong(currentSongIndex);
-    audio.play();
-    playPauseButton.innerHTML = '<img src="pause.png">';
-}
-
 function nextAudio() {
-    currentSongIndex = (currentSongIndex + 1) % playlist.length;
-    loadSong(currentSongIndex);
-    audio.play();
-    playPauseButton.innerHTML = '<img src="pause.png">';
+    currentAudioIndex = (currentAudioIndex + 1) % shuffledAudioFiles.length;
+    loadAudio(currentAudioIndex);
 }
 
-audio.addEventListener("ended", nextAudio);
+function previousAudio() {
+    if (audio.currentTime <= 3) {
+        currentAudioIndex = (currentAudioIndex - 1 + shuffledAudioFiles.length) % shuffledAudioFiles.length;
+    } else {
+        audio.currentTime = 0;
+    }
+    loadAudio(currentAudioIndex);
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-    loadSong(currentSongIndex);
-});
+function loadAudio(index) {
+    var audioFile = shuffledAudioFiles[index];
+    audio.src = audioFile.src;
+    artist.textContent = audioFile.artist;
+    songTitle.textContent = audioFile.song;
+    audio.play();
+}
+
+function shuffleArray(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
+audio.src = shuffledAudioFiles[0].src;
+audio.play();
+
+loadAudio(0);
+
+
+}
