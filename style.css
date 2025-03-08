@@ -1,0 +1,71 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.ascii pre {
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.profcont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profwin {
+    width: 250px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+
+.profbody {
+    text-align: center;
+}
+
+.profbody img {
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.profbody img:hover {
+    transform: scale(1.1);
+}
+
+.audio-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.audio-controls p {
+    font-size: 13px;
+}
+
+.controls img {
+    height: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.controls img:hover {
+    opacity: 0.7;
+}
