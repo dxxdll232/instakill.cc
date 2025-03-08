@@ -10,7 +10,7 @@ body {
 
 @font-face {
     font-family: 'basiic';
-    src: url('/assets/font/basiic.ttf') format('truetype');
+    src: url('basiic.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
