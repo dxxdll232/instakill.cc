@@ -11,22 +11,21 @@
         /* Center ASCII Art */
         .ascii {
             text-align: center;
-            padding-top: 50px; /* Adjust the spacing above the ASCII art */
+            padding-top: 50px;
         }
         .ascii pre {
             background-color: transparent;
             border: none;
             color: white;
-            font-size: 16px;  /* Optional: Adjust font size if needed */
+            font-size: 16px;
             padding: 10px 0;
             margin: 0 auto;
             width: 100%;
             max-width: 100%;
-            font-family: 'Courier New', monospace; /* Use a monospace font */
-            white-space: pre;  /* Ensure the spaces are preserved */
-            line-height: 1.2;  /* Adjust line height to avoid extra spacing between lines */
+            font-family: 'Courier New', monospace;
+            white-space: pre;
+            line-height: 1.2;
         }
-
         .ascii > * {
             position: relative;
             top: 25px;
@@ -68,8 +67,14 @@
             cursor: pointer;
         }
     </style>
+    <script>
+        // Prevent direct access without login
+        if (sessionStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
-<body>
+<body onload="playMedia()">
 
     <!-- ASCII ART -->
     <div class="ascii">
@@ -91,53 +96,24 @@
     <div class="wrapper">
         <div class="container">
             <div class="content">
-                <div class="profcont">
-                    <div class="window profwin glass active">
-                        <div class="title-bar">
-                            <div class="title-bar-text">dinero.exe</div>
-                            <div class="title-bar-controls">
-                                <button aria-label="Minimize"></button>
-                                <button aria-label="Maximize"></button>
-                                <button aria-label="Close"></button>
-                            </div>
-                        </div>
-                        <div class="window-body profbody has-space">
-                            <a href="https://doxbin.com/user/line" target="_blank">
-                                <img src="dinero.png" style="height:120px;border-radius:5px;">
-                            </a>
-                            <h5><strong>Dinero</strong></h5>
-                            <p>?</p>
-                            <a href="https://t.me/IlIlIlllllllllllI" target="_blank">
-                                <img style="height:25px;margin-top:-50px;" src="telegram.png">
-                            </a>
+                <div class="window glass active">
+                    <div class="title-bar">
+                        <div class="title-bar-text">dinero.exe</div>
+                        <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="content">
-                <div class="profcont">
-                    <div class="window profwin glass active">
-                        <div class="title-bar">
-                            <div class="title-bar-text">flank.exe</div>
-                            <div class="title-bar-controls">
-                                <button aria-label="Minimize"></button>
-                                <button aria-label="Maximize"></button>
-                                <button aria-label="Close"></button>
-                            </div>
-                        </div>
-                        <div class="window-body profbody has-space">
-                            <a href="https://doxbin.com/user/line" target="_blank">
-                                <img src="flank.png" style="height:120px;border-radius:5px;">
-                            </a>
-                            <h5><strong>Flank</strong></h5>
-                            <p>#Nigger</p>
-                            <a href="https://t.me/" target="_blank">
-                                <img style="height:25px;margin-top:-50px;" src="telegram.png">
-                            </a>
-                        </div>
+                    <div class="window-body">
+                        <a href="https://doxbin.com/user/line" target="_blank">
+                            <img src="dinero.png" style="height:120px;border-radius:5px;">
+                        </a>
+                        <h5><strong>Dinero</strong></h5>
+                        <p>?</p>
+                        <a href="https://t.me/IlIlIlllllllllllI" target="_blank">
+                            <img style="height:25px;margin-top:-50px;" src="telegram.png">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -145,26 +121,47 @@
 
         <div class="container">
             <div class="content">
-                <div class="profcont">
-                    <div class="window profwin glass active">
-                        <div class="title-bar">
-                            <div class="title-bar-text">dorm.exe</div>
-                            <div class="title-bar-controls">
-                                <button aria-label="Minimize"></button>
-                                <button aria-label="Maximize"></button>
-                                <button aria-label="Close"></button>
-                            </div>
+                <div class="window glass active">
+                    <div class="title-bar">
+                        <div class="title-bar-text">flank.exe</div>
+                        <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
                         </div>
-                        <div class="window-body profbody has-space">
-                            <a href="https://doxbin.com/user/2sp" target="_blank">
-                                <img src="dorm.png" style="height:120px;border-radius:5px;">
-                            </a>
-                            <h5><strong>Dorm</strong></h5>
-                            <p>#BLM</p>
-                            <a href="https://t.me/" target="_blank">
-                                <img style="height:25px;margin-top:-50px;" src="telegram.png">
-                            </a>
+                    </div>
+                    <div class="window-body">
+                        <a href="https://doxbin.com/user/line" target="_blank">
+                            <img src="flank.png" style="height:120px;border-radius:5px;">
+                        </a>
+                        <h5><strong>Flank</strong></h5>
+                        <a href="https://t.me/" target="_blank">
+                            <img style="height:25px;margin-top:-50px;" src="telegram.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="window glass active">
+                    <div class="title-bar">
+                        <div class="title-bar-text">dorm.exe</div>
+                        <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
                         </div>
+                    </div>
+                    <div class="window-body">
+                        <a href="https://doxbin.com/user/2sp" target="_blank">
+                            <img src="dorm.png" style="height:120px;border-radius:5px;">
+                        </a>
+                        <h5><strong>Dorm</strong></h5>
+                        <a href="https://t.me/" target="_blank">
+                            <img style="height:25px;margin-top:-50px;" src="telegram.png">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -175,10 +172,10 @@
     <div class="audwin">
         <div class="audio-controls">
             <p style="font-size:13px;margin-bottom:5px;">Now Playing:</p>
-            <div id="songInfo" class="text-center">
+            <div id="songInfo">
                 <div id="artist">Artist</div>&nbsp;-&nbsp;<div id="songTitle">Song</div>
             </div>
-            <div class="controls" style="margin-top:10px;margin-bottom:7px;">
+            <div class="controls" style="margin-top:10px;">
                 <a onclick="previousAudio()" style="margin-right:10px;"><img src="back.png"></a>
                 <a id="playPauseButton" onclick="togglePlayPause()" style="margin-right:10px;"><img src="play.png"></a>
                 <a onclick="nextAudio()"><img src="next.png"></a>
@@ -202,12 +199,12 @@
             }
         }
 
-        window.addEventListener('message', function(event) {
-            if (event.data === 'playMusic') {
-                document.getElementById('overlays').style.display = 'none';
-                playMedia();
+        function playMedia() {
+            var audio = document.getElementById("audio");
+            if (audio.paused) {
+                audio.play();
             }
-        });
+        }
     </script>
 
 </body>
