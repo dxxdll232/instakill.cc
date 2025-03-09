@@ -14,7 +14,7 @@ var audio = document.getElementById("audio");
 var playPauseButton = document.getElementById("playPauseButton");
 var audioFiles = [
         {
-        src: "https://web.archive.org/web/20241006213336/https://files.catbox.moe/xnwimc.mp3",
+        src: "https://files.catbox.moe/xnwimc.mp3",
         artist: "Immortal Technique",
         song: "Dance With the Devil"
         },
