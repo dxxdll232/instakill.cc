@@ -9,13 +9,21 @@
     <title>IN$TAKILL</title>
     <style>
         /* Center ASCII Art */
+        .ascii {
+            text-align: center;
+            padding-top: 50px; /* Adjust the spacing above the ASCII art */
+        }
         .ascii pre {
             background-color: transparent;
             border: none;
             color: white;
-            text-align: center;
+            font-size: 16px;  /* Optional: Adjust font size if needed */
             padding: 10px 0;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%; /* Ensure it doesn't overflow the container */
         }
+
         .ascii > * {
             position: relative;
             top: 25px;
@@ -45,7 +53,7 @@
             text-align: center;
             margin-top: 20px;
         }
-        
+
         .audio-controls {
             display: flex;
             flex-direction: column;
@@ -70,8 +78,8 @@ $$$$$$\ $$\   $$\    $$\  $$$$$$$$\  $$$$$$\  $$\   $$\ $$$$$$\ $$\       $$\
   $$ |  $$ \$$$$ |\$$$$$$\   $$ |   $$  __$$ |$$  $$<     $$ |  $$ |      $$ |      
   $$ |  $$ |\$$$ | \___ $$\  $$ |   $$ |  $$ |$$ |\$$\    $$ |  $$ |      $$ |      
 $$$$$$\ $$ | \$$ |$$\  \$$ | $$ |   $$ |  $$ |$$ | \$$\ $$$$$$\ $$$$$$$$\ $$$$$$$$\ 
-\______|\__|  \__|\$$$$$$  | \__|   \__|  \__|\__|  \__|\______|\________|\________|
-                   \_$$  _/                                                         
+\______|\__|  \__|\$$$$$$  | \__|   \__|  \__|\__|  \__|\______|\________|\________| 
+                   \_$$  _/                                                          
                      \ _/                                                                                                                                              
         </pre>
     </div>
@@ -104,7 +112,7 @@ $$$$$$\ $$ | \$$ |$$\  \$$ | $$ |   $$ |  $$ |$$ | \$$\ $$$$$$\ $$$$$$$$\ $$$$$$
                 </div>
             </div>
         </div>
-
+        
         <div class="container">
             <div class="content">
                 <div class="profcont">
