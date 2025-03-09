@@ -18,6 +18,16 @@ var audioFiles = [
         artist: "Immortal Technique",
         song: "Dance With the Devil"
         },
+        {
+        src: "https://files.catbox.moe/ablkhs.mp3",
+        artist: "District",
+        song: "Headshot"
+        },
+        {
+        src: "https://files.catbox.moe/fnigrq.mp3",
+        artist: "District",
+        song: "Headshot"
+        },
 ];
 
 var artist = document.getElementById("artist");
