@@ -3,65 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IN$TAKILL</title>
     <link rel="stylesheet" href="https://unpkg.com/7.css">
     <link rel="stylesheet" href="style.css">
-    <script src="mzik.js"></script>
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <title>IN$TAKILL</title>
     <style>
-        body {
-            background: url('bg.jpeg') no-repeat center center fixed;
-            background-size: cover;
+        /* Center ASCII Art */
+        .ascii {
+            text-align: center;
+            padding-top: 50px; /* Adjust the spacing above the ASCII art */
+        }
+        .ascii pre {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;  /* Optional: Adjust font size if needed */
+            padding: 10px 0;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            font-family: 'Courier New', monospace; /* Use a monospace font */
+            white-space: pre;  /* Ensure the spaces are preserved */
+            line-height: 1.2;  /* Adjust line height to avoid extra spacing between lines */
+        }
+
+        .ascii > * {
+            position: relative;
+            top: 25px;
+        }
+
+        /* Flexbox container for profile cards */
+        .wrapper {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
-        .login-container {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.5);
+
+        .container {
+            max-width: 300px;
+        }
+
+        .content {
             padding: 20px;
-            border-radius: 10px;
+            min-height: 500px;
         }
-        .profile {
+
+        /* Audio Controls */
+        .audwin {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .audio-controls {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .profile img {
-            width: 100px;
-            border-radius: 50%;
-        }
-        .dropdown {
-            margin-top: 10px;
-        }
-        .ok-button {
-            margin-top: 10px;
+
+        .controls img {
+            height: 30px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="login-container" id="loginScreen">
-        <div class="profile">
-            <img src="instakill.png" alt="User Login">
-            <select id="userSelect" class="dropdown">
-                <option value="instakill">IN$TAKILL</option>
-            </select>
-            <button class="ok-button" onclick="login()">OK</button>
+
+    <!-- ASCII ART -->
+    <div class="ascii">
+        <pre>
+     $$$$$$\ $$\   $$\    $$\  $$$$$$$$\  $$$$$$\  $$\   $$\ $$$$$$\ $$\       $$\       
+     \_$$  _|$$$\  $$ | $$$$$$\\__$$  __|$$  __$$\ $$ | $$  |\_$$  _|$$ |      $$ |      
+       $$ |  $$$$\ $$ |$$  __$$\  $$ |   $$ /  $$ |$$ |$$  /   $$ |  $$ |      $$ |      
+       $$ |  $$ $$\$$ |$$ /  \__| $$ |   $$$$$$$$ |$$$$$  /    $$ |  $$ |      $$ |      
+       $$ |  $$ \$$$$ |\$$$$$$\   $$ |   $$  __$$ |$$  $$<     $$ |  $$ |      $$ |      
+       $$ |  $$ |\$$$ | \___ $$\  $$ |   $$ |  $$ |$$ |\$$\    $$ |  $$ |      $$ |      
+     $$$$$$\ $$ | \$$ |$$\  \$$ | $$ |   $$ |  $$ |$$ | \$$\ $$$$$$\ $$$$$$$$\ $$$$$$$$\ 
+     \______|\__|  \__|\$$$$$$  | \__|   \__|  \__|\__|  \__|\______|\________|\________| 
+                        \_$$  _/                                                          
+                          \ _/        
+        </pre>
+    </div>
+
+    <!-- Profile Cards -->
+    <div class="wrapper">
+        <div class="container">
+            <div class="content">
+                <div class="profcont">
+                    <div class="window profwin glass active">
+                        <div class="title-bar">
+                            <div class="title-bar-text">dinero.exe</div>
+                            <div class="title-bar-controls">
+                                <button aria-label="Minimize"></button>
+                                <button aria-label="Maximize"></button>
+                                <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body profbody has-space">
+                            <a href="https://doxbin.com/user/line" target="_blank">
+                                <img src="dinero.png" style="height:120px;border-radius:5px;">
+                            </a>
+                            <h5><strong>Dinero</strong></h5>
+                            <p>?</p>
+                            <a href="https://t.me/IlIlIlllllllllllI" target="_blank">
+                                <img style="height:25px;margin-top:-50px;" src="telegram.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="content">
+                <div class="profcont">
+                    <div class="window profwin glass active">
+                        <div class="title-bar">
+                            <div class="title-bar-text">flank.exe</div>
+                            <div class="title-bar-controls">
+                                <button aria-label="Minimize"></button>
+                                <button aria-label="Maximize"></button>
+                                <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body profbody has-space">
+                            <a href="https://doxbin.com/user/line" target="_blank">
+                                <img src="flank.png" style="height:120px;border-radius:5px;">
+                            </a>
+                            <h5><strong>Flank</strong></h5>
+                            <p>#Nigger</p>
+                            <a href="https://t.me/" target="_blank">
+                                <img style="height:25px;margin-top:-50px;" src="telegram.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="profcont">
+                    <div class="window profwin glass active">
+                        <div class="title-bar">
+                            <div class="title-bar-text">dorm.exe</div>
+                            <div class="title-bar-controls">
+                                <button aria-label="Minimize"></button>
+                                <button aria-label="Maximize"></button>
+                                <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body profbody has-space">
+                            <a href="https://doxbin.com/user/2sp" target="_blank">
+                                <img src="dorm.png" style="height:120px;border-radius:5px;">
+                            </a>
+                            <h5><strong>Dorm</strong></h5>
+                            <p>#BLM</p>
+                            <a href="https://t.me/" target="_blank">
+                                <img style="height:25px;margin-top:-50px;" src="telegram.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- Audio Controls -->
+    <div class="audwin">
+        <div class="audio-controls">
+            <p style="font-size:13px;margin-bottom:5px;">Now Playing:</p>
+            <div id="songInfo" class="text-center">
+                <div id="artist">Artist</div>&nbsp;-&nbsp;<div id="songTitle">Song</div>
+            </div>
+            <div class="controls" style="margin-top:10px;margin-bottom:7px;">
+                <a onclick="previousAudio()" style="margin-right:10px;"><img src="back.png"></a>
+                <a id="playPauseButton" onclick="togglePlayPause()" style="margin-right:10px;"><img src="play.png"></a>
+                <a onclick="nextAudio()"><img src="next.png"></a>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio"></audio>
+    <script src="mzik.js"></script>
+
     <script>
-        function login() {
-            var user = document.getElementById("userSelect").value;
-            if (user === "instakill") {
-                sessionStorage.setItem("loggedIn", "true"); // Set login session
-                playMedia(); // Start music
-                setTimeout(function() {
-                    window.location.href = "desktop.html";
-                }, 1000);
+        function togglePlayPause() {
+            var audio = document.getElementById("audio");
+            var playPauseButton = document.getElementById("playPauseButton");
+            if (audio.paused) {
+                audio.play();
+                playPauseButton.innerHTML = "<img src='pause.png'>";
+            } else {
+                audio.pause();
+                playPauseButton.innerHTML = "<img src='play.png'>";
             }
         }
+
+        window.addEventListener('message', function(event) {
+            if (event.data === 'playMusic') {
+                document.getElementById('overlays').style.display = 'none';
+                playMedia();
+            }
+        });
     </script>
+
 </body>
 </html>
