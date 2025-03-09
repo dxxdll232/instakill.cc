@@ -3,26 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IN$TAKILL</title>
+    <title>Windows 7 Login</title>
+    <link rel="stylesheet" href="https://unpkg.com/7.css">
     <link rel="stylesheet" href="style.css">
+    <script src="mzik.js"></script>
+    <style>
+        body {
+            background: url('bg.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile img {
+            width: 100px;
+            border-radius: 50%;
+        }
+        .dropdown {
+            margin-top: 10px;
+        }
+        .ok-button {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div id="loginScreen">
-        <div class="login-container">
-            <h1>User Login</h1>
-            <select id="userSelect">
+    <div class="login-container" id="loginScreen">
+        <div class="profile">
+            <img src="user.png" alt="User Profile">
+            <select id="userSelect" class="dropdown">
                 <option value="instakill">IN$TAKILL</option>
             </select>
-            <button onclick="login()">OK</button>
+            <button class="ok-button" onclick="login()">OK</button>
         </div>
     </div>
 
+    <div id="mainContent" style="display: none;">
+        <!-- Restored Profile Cards -->
+        <div class="wrapper">
+            <div class="container">
+                <div class="content">
+                    <div class="profcont">
+                        <div class="window profwin glass active">
+                            <div class="title-bar">
+                                <div class="title-bar-text">dinero.exe</div>
+                                <div class="title-bar-controls">
+                                    <button aria-label="Minimize"></button>
+                                    <button aria-label="Maximize"></button>
+                                    <button aria-label="Close"></button>
+                                </div>
+                            </div>
+                            <div class="window-body profbody has-space">
+                                <a href="https://doxbin.com/user/line" target="_blank">
+                                    <img src="dinero.png" style="height:120px;border-radius:5px;">
+                                </a>
+                                <h5><strong>Dinero</strong></h5>
+                                <a href="https://t.me/IlIlIlllllllllllI" target="_blank">
+                                    <img style="height:25px;margin-top:-50px;" src="telegram.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="content">
+                    <div class="profcont">
+                        <div class="window profwin glass active">
+                            <div class="title-bar">
+                                <div class="title-bar-text">flank.exe</div>
+                                <div class="title-bar-controls">
+                                    <button aria-label="Minimize"></button>
+                                    <button aria-label="Maximize"></button>
+                                    <button aria-label="Close"></button>
+                                </div>
+                            </div>
+                            <div class="window-body profbody has-space">
+                                <a href="https://doxbin.com/user/line" target="_blank">
+                                    <img src="flank.png" style="height:120px;border-radius:5px;">
+                                </a>
+                                <h5><strong>Flank</strong></h5>
+                                <a href="https://t.me/" target="_blank">
+                                    <img style="height:25px;margin-top:-50px;" src="telegram.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="content">
+                    <div class="profcont">
+                        <div class="window profwin glass active">
+                            <div class="title-bar">
+                                <div class="title-bar-text">dorm.exe</div>
+                                <div class="title-bar-controls">
+                                    <button aria-label="Minimize"></button>
+                                    <button aria-label="Maximize"></button>
+                                    <button aria-label="Close"></button>
+                                </div>
+                            </div>
+                            <div class="window-body profbody has-space">
+                                <a href="https://doxbin.com/user/2sp" target="_blank">
+                                    <img src="dorm.png" style="height:120px;border-radius:5px;">
+                                </a>
+                                <h5><strong>Dorm</strong></h5>
+                                <a href="https://t.me/" target="_blank">
+                                    <img style="height:25px;margin-top:-50px;" src="telegram.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio"></audio>
     <script>
         function login() {
             var user = document.getElementById("userSelect").value;
             if (user === "instakill") {
-                sessionStorage.setItem("loggedIn", "true");
-                window.location.href = "desktop"; // Redirect to desktop page
+                document.getElementById("loginScreen").style.display = "none";
+                document.getElementById("mainContent").style.display = "block";
+                playMedia();
             }
         }
     </script>
