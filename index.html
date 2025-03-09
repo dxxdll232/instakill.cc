@@ -51,95 +51,14 @@
         </div>
     </div>
 
-    <div id="mainContent" style="display: none;">
-        <!-- Restored Profile Cards -->
-        <div class="wrapper">
-            <div class="container">
-                <div class="content">
-                    <div class="profcont">
-                        <div class="window profwin glass active">
-                            <div class="title-bar">
-                                <div class="title-bar-text">dinero.exe</div>
-                                <div class="title-bar-controls">
-                                    <button aria-label="Minimize"></button>
-                                    <button aria-label="Maximize"></button>
-                                    <button aria-label="Close"></button>
-                                </div>
-                            </div>
-                            <div class="window-body profbody has-space">
-                                <a href="https://doxbin.com/user/line" target="_blank">
-                                    <img src="dinero.png" style="height:120px;border-radius:5px;">
-                                </a>
-                                <h5><strong>Dinero</strong></h5>
-                                <a href="https://t.me/IlIlIlllllllllllI" target="_blank">
-                                    <img style="height:25px;margin-top:-50px;" src="telegram.png">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="content">
-                    <div class="profcont">
-                        <div class="window profwin glass active">
-                            <div class="title-bar">
-                                <div class="title-bar-text">flank.exe</div>
-                                <div class="title-bar-controls">
-                                    <button aria-label="Minimize"></button>
-                                    <button aria-label="Maximize"></button>
-                                    <button aria-label="Close"></button>
-                                </div>
-                            </div>
-                            <div class="window-body profbody has-space">
-                                <a href="https://doxbin.com/user/line" target="_blank">
-                                    <img src="flank.png" style="height:120px;border-radius:5px;">
-                                </a>
-                                <h5><strong>Flank</strong></h5>
-                                <a href="https://t.me/" target="_blank">
-                                    <img style="height:25px;margin-top:-50px;" src="telegram.png">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="content">
-                    <div class="profcont">
-                        <div class="window profwin glass active">
-                            <div class="title-bar">
-                                <div class="title-bar-text">dorm.exe</div>
-                                <div class="title-bar-controls">
-                                    <button aria-label="Minimize"></button>
-                                    <button aria-label="Maximize"></button>
-                                    <button aria-label="Close"></button>
-                                </div>
-                            </div>
-                            <div class="window-body profbody has-space">
-                                <a href="https://doxbin.com/user/2sp" target="_blank">
-                                    <img src="dorm.png" style="height:120px;border-radius:5px;">
-                                </a>
-                                <h5><strong>Dorm</strong></h5>
-                                <a href="https://t.me/" target="_blank">
-                                    <img style="height:25px;margin-top:-50px;" src="telegram.png">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <audio id="audio"></audio>
     <script>
         function login() {
             var user = document.getElementById("userSelect").value;
             if (user === "instakill") {
-                document.getElementById("loginScreen").style.display = "none";
-                document.getElementById("mainContent").style.display = "block";
                 playMedia();
+                setTimeout(function() {
+                    window.location.href = "desktop.html";
+                }, 1000); // Delay to ensure music starts before redirecting
             }
         }
     </script>
