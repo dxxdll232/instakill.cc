@@ -24,9 +24,9 @@ var audioFiles = [
         song: "Headshot"
         },
         {
-        src: "https://files.catbox.moe/fnigrq.mp3",
-        artist: "District",
-        song: "Headshot"
+        src: "https://files.catbox.moe/j2uw4w.mp3",
+        artist: "RKO",
+        song: "Gas Talkin"
         },
 ];
 
