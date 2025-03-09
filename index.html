@@ -55,10 +55,11 @@
         function login() {
             var user = document.getElementById("userSelect").value;
             if (user === "instakill") {
-                playMedia();
+                sessionStorage.setItem("loggedIn", "true"); // Set login session
+                playMedia(); // Start music
                 setTimeout(function() {
                     window.location.href = "desktop.html";
-                }, 1000); // Delay to ensure music starts before redirecting
+                }, 1000);
             }
         }
     </script>
