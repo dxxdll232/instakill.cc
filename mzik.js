@@ -38,10 +38,10 @@ function playMedia() {
 function togglePlayPause() {
     if (audio.paused) {
         audio.play();
-        playPauseButton.innerHTML = "<img src='pause.png'>";
+        playPauseButton.innerHTML = "<img src='pause.png' style='width:50px; height:50px;'>";
     } else {
         audio.pause();
-        playPauseButton.innerHTML = "<img src='play.png'>";
+        playPauseButton.innerHTML = "<img src='play.png' style='width:50px; height:50px;'>";
     }
 }
 
@@ -86,6 +86,5 @@ audio.src = shuffledAudioFiles[0].src;
 audio.play();
 
 loadAudio(0);
-
 
 }
