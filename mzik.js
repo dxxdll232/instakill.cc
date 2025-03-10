@@ -14,11 +14,6 @@ var audio = document.getElementById("audio");
 var playPauseButton = document.getElementById("playPauseButton");
 var audioFiles = [
         {
-        src: "https://files.catbox.moe/xnwimc.mp3",
-        artist: "Immortal Technique",
-        song: "Dance With the Devil"
-        },
-        {
         src: "https://files.catbox.moe/ablkhs.mp3",
         artist: "District",
         song: "Headshot"
