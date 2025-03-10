@@ -28,6 +28,11 @@ var audioFiles = [
         artist: "RKO",
         song: "Gas Talkin"
         },
+        {
+        src: "https://files.catbox.moe/svddz9.mp3",
+        artist: "osquinn",
+        song: "Drama"
+        },
 ];
 
 var artist = document.getElementById("artist");
