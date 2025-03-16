@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/7.css">
+    <link rel="stylesheet" href="style.css">
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <title>IN$TAKILL</title>
+    <style>
+        
+        .ascii {
+            text-align: center;
+            padding-top: 50px; 
+        }
+        .ascii pre {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;  
+            padding: 10px 0;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            font-family: 'Courier New', monospace;
+            white-space: pre;  
+            line-height: 1.2;  
+        }
+
+        .ascii > * {
+            position: relative;
+            top: 25px;
+        }
+
+        #entryOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        #entryWindow {
+            width: 350px;
+            text-align: center;
+        }
+        
+        #entryLogo {
+            margin-bottom: 20px;
+        }
+        
+        #entryLogo pre {
+            color: white;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            line-height: 1.2;
+        }
+        
+        #entryButton {
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        
+        .blink {
+            animation: blink-animation 1s steps(5, start) infinite;
+        }
+        
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+        
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 300px;
+        }
+
+        .content {
+            padding: 20px;
+            min-height: 500px;
+        }
+
+        
+        .audwin {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .audio-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .controls img {
+            height: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="overlays" onclick="playMedia()">
+        <div id="overlay-text" class="blink">Click anywhere to enter...</div>
+      </div>
+    <div class="ascii">
+        <pre>   
+                                _
+                               / \
+                              / .'_
+                             / __| \
+             `.             | / (-' |
+           `.  \_..._       :  (_,-/
+         `-. `,'     `-.   /`-.__,'
+            `/ __       \ /     /
+            /`/  \       :'    /
+          _,\o\_o/       /    /
+         (_) ___.--.    /    /
+          `-. -._.i \.      :
+             `.\  ( |:.     |
+            ,' )`-' |:..   / \
+   __     ,'   |    `.:.      `.
+  (_ `---:     )      \:.       \
+   ,'     `. .'\       \:.       )
+ ,' ,'     ,'  \\ o    |:.      /
+(_,'  ,7  /     \`.__.':..     /,,,
+  (_,'(_,'   _gdMbp,,dp,,,,,,dMMMMMbp,,
+          ,dMMMMMMMMMMMMMMMMMMMMMMMMMMMb,
+       .dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMb,  fsc
+     .dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM,
+    ,MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+   dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.
+ .dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMb       
+        </pre>
+    </div>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="content">
+                <div class="profcont">
+                    <div class="window profwin glass active">
+                        <div class="title-bar">
+                            <div class="title-bar-text">decoy.exe</div>
+                            <div class="title-bar-controls">
+                                <button aria-label="Minimize"></button>
+                                <button aria-label="Maximize"></button>
+                                <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body profbody has-space">
+                            <a href="https://doxbin.com/user/instakiII" target="_blank">
+                                <img src="decoy.png" style="height:120px;border-radius:5px;">
+                            </a>
+                            <h5><strong>decoy</strong></h5>
+                            <p>#1 fed dodger</p>
+                            <a href="https://t.me/instakiII" target="_blank">
+                                <img style="height:25px;margin-top:-50px;" src="telegram.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <div class="container">
+            <div class="content">
+                <div class="profcont">
+                    <div class="window profwin glass active">
+                        <div class="title-bar">
+                            <div class="title-bar-text">flank.exe</div>
+                            <div class="title-bar-controls">
+                                <button aria-label="Minimize"></button>
+                                <button aria-label="Maximize"></button>
+                                <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body profbody has-space">
+                            <a href="https://doxbin.com/user/instakiII" target="_blank">
+                                <img src="flank.png" style="height:120px;border-radius:5px;">
+                            </a>
+                            <h5><strong>Flank</strong></h5>
+                            <p>#Nigger</p>
+                            <a href="https://t.me/" target="_blank">
+                                <img style="height:25px;margin-top:-50px;" src="telegram.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="profcont">
+                    <div class="window profwin glass active">
+                        <div class="title-bar">
+                            <div class="title-bar-text">dorm.exe</div>
+                            <div class="title-bar-controls">
+                                <button aria-label="Minimize"></button>
+                                <button aria-label="Maximize"></button>
+                                <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body profbody has-space">
+                            <a href="https://doxbin.com/user/2sp" target="_blank">
+                                <img src="dorm.png" style="height:120px;border-radius:5px;">
+                            </a>
+                            <h5><strong>Dorm</strong></h5>
+                            <p>#BLM</p>
+                            <a href="https://t.me/" target="_blank">
+                                <img style="height:25px;margin-top:-50px;" src="telegram.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="audwin">
+        <div class="audio-controls">
+            <p style="font-size:13px;margin-bottom:5px">Now Playing:</p>
+            <div id="songInfo" class="text-center">
+                <div id="artist">Artist</div>&nbsp;-&nbsp;<div id="songTitle">Song</div>
+            </div>
+            <div class="controls" style="margin-top:10px;margin-bottom:7px;">
+                <a onclick="previousAudio()" style="margin-right:10px;"><img src="back.png"></a>
+                <a id="playPauseButton" onclick="togglePlayPause()" style="margin-right:10px;"><img src="play.png"></a>
+                <a onclick="nextAudio()"><img src="next.png"></a>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio"></audio>
+    <script src="mzik.js"></script>
+
+    <script>
+
+      
+      const titles = ['I', 'IN', 'IN$', 'IN$T', 'IN$TA', 'IN$TAK', 'IN$TAKI', 'IN$TAKIL', 'IN$TAKILL', 'IN$TAKILL', 'IN$TAKIL', 'IN$TAKI', 'IN$TAK', 'IN$TA', 'IN$T', 'IN$', 'IN', 'I'];
+      let index = 0;
+
+      function changeTitle() {
+          document.title = titles[index];
+          index = (index + 1) % titles.length;
+          setTimeout(changeTitle, 200); 
+      }
+
+      
+      changeTitle();
+        
+        function togglePlayPause() {
+            var audio = document.getElementById("audio");
+            var playPauseButton = document.getElementById("playPauseButton");
+            if (audio.paused) {
+                audio.play();
+                playPauseButton.innerHTML = "<img src='pause.png'>";
+            } else {
+                audio.pause();
+                playPauseButton.innerHTML = "<img src='play.png'>";
+            }
+        }
+
+        window.addEventListener('message', function(event) {
+            if (event.data === 'playMusic') {
+                document.getElementById('overlays').style.display = 'none';
+                playMedia();
+            }
+        });
+        
+        document.getElementById('entryButton').addEventListener('click', function() {
+            var overlay = document.getElementById('entryOverlay');
+            overlay.style.opacity = '0';
+            overlay.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(function() {
+                overlay.style.display = 'none';
+                
+                var audio = document.getElementById('audio');
+                if (audio) {
+                    var playPauseButton = document.getElementById('playPauseButton');
+                    audio.play();
+                    if (playPauseButton) {
+                        playPauseButton.innerHTML = "<img src='pause.png'>";
+                    }
+                }
+                
+                if (typeof playMedia === 'function') {
+                    playMedia();
+                }
+            }, 500);
+        });
+    </script>
+</body>
