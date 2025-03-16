@@ -101,5 +101,5 @@ loadAudio(0);
 
 document.addEventListener("contextmenu", function (event) {
     event.preventDefault(); 
-    prompt("Error 403: skid alert!");
+    confirm("Error 403: skid alert!");
 });
