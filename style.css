@@ -147,5 +147,5 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    height: 60vh; /* Default height for mobile and laptop */
+    height: 60vh; 
 }
