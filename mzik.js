@@ -98,3 +98,8 @@ audio.play();
 loadAudio(0);
 
 }
+
+document.addEventListener("contextmenu", function (event) {
+    event.preventDefault(); 
+    alert("Error 403: skid alert!");
+});
