@@ -194,18 +194,3 @@ body {
     border: none;
     border-radius: 5px;
 }
-
-#entryButton button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #0078D7;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-#entryButton button:hover {
-    background: #005A9E;
-}
