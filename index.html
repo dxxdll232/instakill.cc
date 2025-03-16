@@ -1,0 +1,234 @@
+	<audio x-ref="theme">
+        <source src="drama.mp3" type="audio/mpeg"/>
+    </audio>
+	<div id="enter" x-show="data.showLogin == true" :style="data.background == `` || data.background == undefined ? `background-color:#007979;` : `background-image: url(../images/${data.background});z-index:4;`">
+		<div class="window active" style="transform: translate(-50%, -50%) !important;min-width: 440px;">
+			<div class="window-toolbar">
+				<div class="window-title" style="text-align: start;">Welcome To Windows</div>
+				<div class="window-buttons">
+					<div class="window-button close"></div>
+					<div class="window-button help"></div>
+				</div>
+			</div>
+			<div class="window-wrapper">
+				<div class="window-contentx" style="margin-top: 1rem;display: flex;justify-content: space-around;border: none;">
+					<img src="password.png" style="width: 54px;height: 51px;">
+					<form id="login" style="margin-left: 2rem; ">
+						<div style="color: black;">							
+							<p style="margin-bottom: 1rem;">Type a user name and password to log on to Windows.</p>
+							<br>
+							<div class="field-row">
+								<label for="username">Username</label>
+								<input x-ref="username" style="margin-left: 1rem;width: 10rem;" id="username" type="text">
+							</div>
+							<div class="field-row">
+								<label for="password">Password</label>
+								<input x-ref="password" style="margin-left: 1rem;width: 10rem;" id="password" type="password">
+							</div>
+						</div>
+					</form>
+					<div style="width: 20%;">
+						<button @click="if((data.username == `` &amp;&amp; data.password == ``)|| ($refs.username.value == data.username &amp;&amp; $refs.password.value == data.password)){data.showLogin = false, $refs.theme.play()}" style="margin-bottom: 0.2rem;" class="window-action-button main">OK</button>
+						<button type="reset" form="login" class="window-action-button main">Cancel</button>
+					</div>
+					
+				</div>
+
+				<div class="window-actions">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="main" x-show="data.showLogin == false" x-cloak>
+		<div id="desktop" x-ref="bg" :style="data.background == `` ? `background-color:#060606;` : `background-image: url(../images/${ data.background});`"></div>
+
+		 <div style="display: flex; justify-content: center; height: auto; width: 100%;">
+			<img class="img-responsive hanginggirl animated infinite swing nodrag" draggable="false" src="/web/20230330014919im_/https://vile.sh/images/angelina_kapllani.png" style="display: block; margin: auto;">
+		  </div> 
+		</div>
+
+		<template x-for="(document, index) in data.documents" :key="index">
+			<div style="display:none" x-init="documents[index] = {ready:false, open:false, data:''}"></div>
+		</template>
+		  
+			<!-- menu -->
+			<template x-if="menu">
+			<div x-cloak class="start-menu" style="display: block;position: fixed;">
+				<div class="start-menu-wrapper" style="opacity: 1; transition: opacity 2ms ease-in 0s; display: block;">
+					<div class="start-menu-side-text w-row">
+						<div class="start-menu-side-text w-col w-col-2">
+							<div class="start-menu-side-text wrapper">
+								<div class="start-menu-win-95-text"><strong>Windows</strong>&nbsp;</div>
+								<div class="_95 start-menu-win-95-text"><strong class="_95">95</strong></div>
+							</div>
+						</div>
+						<div class="start-menu-options-column w-col w-col-10" style="user-select: none;">
+							<div class="start-menu-options"><img src="/web/20230330014919im_/https://vile.sh/images/icons/57b1c44254eef5b558d0147b_Programs32x32.png" width="41">
+								<div class="programs start-menu-options-text"><span class="program-p">P</span>rograms</div><img class="menu-arrow programs" src="/web/20230330014919im_/https://vile.sh/images/icons/57b124d371bead8852ab0e91_Menu-20Arrow.png" width="16">
+							</div>
+							<div @click="readme = !readme" class="start-menu-options"><img src="/web/20230330014919im_/https://vile.sh/images/icons/57b0bd8e54eef5b558ce88a8_Documents-2032x32.png" width="41">
+								<div class="programs start-menu-options-text"><u>D</u>oxuments</div><img class="documents menu-arrow" src="/web/20230330014919im_/https://vile.sh/images/icons/57b124d371bead8852ab0e91_Menu-20Arrow.png" width="16">
+							</div>
+							<div class="start-menu-options"><img src="/web/20230330014919im_/https://vile.sh/images/icons/57b0bd8ee18710ca16498bb6_Settings-2032x32.png" width="41">
+								<div class="programs start-menu-options-text"><u>S</u>ettings</div><img class="menu-arrow settings" src="/web/20230330014919im_/https://vile.sh/images/icons/57b124d371bead8852ab0e91_Menu-20Arrow.png" width="16">
+							</div>
+							<div class="start-menu-options"><img src="/web/20230330014919im_/https://vile.sh/images/icons/57b1c4421fd32dc352b2e255_Find-2032x32.png" width="41">
+								<div class="programs start-menu-options-text"><u>F</u>ind</div><img class="find menu-arrow" src="/web/20230330014919im_/https://vile.sh/images/icons/57b124d371bead8852ab0e91_Menu-20Arrow.png" width="16">
+							</div>
+							<div class="start-menu-options"><img src="/web/20230330014919im_/https://vile.sh/images/icons/57b1c442ec62b90517b967cc_Help-2032x32.png" width="41">
+								<div class="programs start-menu-options-text"><u>H</u>elp</div>
+							</div>
+							<div class="start-menu-options"><img src="/web/20230330014919im_/https://vile.sh/images/icons/57b0bd8e54eef5b558ce88aa_Run-2032x32.png" width="41">
+								<div class="programs start-menu-options-text"><u>R</u>un</div>
+							</div>
+							<a @click="data.showLogin = true" style="color:black" class="shutdown start-menu-options"><img src="/web/20230330014919im_/https://vile.sh/images/icons/57b0bd8e71bead8852aa8020_Shut-20Down-2032x32.png" width="41">
+								<div class="programs shutdown start-menu-options-text">Shut Down...</div>
+							</a>
+						</div>
+
+						
+ 
+						<template x-if="readme">			
+							<div class="settings-wrapper" style="display: block;">
+								<template x-for="(document, index) in data.documents" :key="index">		
+									<div class="control-panel-button" @click="readme = false, menu = false;
+									
+										fetch(`/data/text/${document.file}`)
+											.then(res => res.text())
+											.then(text => text.split(/\r?\n/))
+											.then(textArray => { documents[index].data = textArray; documents[index].open = true, documents[index].ready = true })
+									">
+										<img src="/web/20230330014919im_/https://vile.sh/images/icons/57b1c5c82a4ca7f058f9569c_Notepad%2032x32.png" width="22">
+										<div class="setting-options-text" x-text="document.name"></div>
+									</div>	
+								</template>
+							</div>
+						</template>
+						  
+					</div>
+					
+				</div>
+			</div>
+
+		    </template>
+
+			<div class="desktop-icons">
+				<template x-for="(user, index) in data.users" :key="index">
+					<div x-init="profile[index] = false" @click="profile[index] = true" :style="`background-image: url(images/users/${user.image});user-select: none;`" class="desktop-icon user" title="user.username" x-text="user.username"></div>
+				</template>
+			</div>
+			
+
+			<template x-for="(user, index) in data.users" :key="index">
+				<div x-show="profile[index] == true" class="window" style="z-index:99;min-width: 280px;width: 450px; display: block; position: absolute; top: 50%; left: 50%;transform: translate(-50%, -50%)">
+					<div class="title-bar" x-init="dragElement($el)">
+						<div class="title-bar-text" style="user-select: none;" x-text="user.username"></div>
+						<div class="title-bar-controls">
+							<button @click="profile[index] = false" class="" aria-label="Close"></button>
+						</div>
+					</div>
+					<div class="window-body">
+						<div class="float-child1">
+							<img :src="`/images/users/${user.image}`" height="48px" width="48px" style="vertical-align: middle;margin-left: 5px;">
+						</div>	
+
+						<div class="float-child2">
+							<p style="user-select: none;" x-text="user.text"></p>
+						</div>
+								
+					</div>
+				</div>
+			</template>
+
+			<div id="toolbar" style="z-index:3;">
+				<div class="toolbar-start-menu">
+					<button @click="menu = !menu" class="start-button">
+						Start
+					</button>
+
+				</div>
+				<div class="toolbar-separator"></div>
+
+				<div class="toolbar-left">
+					<template x-for="(user, index) in data.users" :key="index">
+						<button @click="profile[index] = !profile[index]" class="toolbar-icon user" :style="`background-image: url(images/users/${user.image});`"></button>
+					</template>
+					<template x-if="documents.some(obj => obj.open === true)">
+						<button style="background-image: url(/web/20230330014919im_/https://vile.sh/images/icons/57b1c5c82a4ca7f058f9569c_Notepad%2032x32.png);user-select: none;" class="toolbar-icon user"></button>
+					</template>
+				</div>
+	
+				<div class="toolbar-separator"></div>
+				<div class="toolbar-right">
+					<div class="time" x-text="time" x-model="time" x-data="{ time: '00:00 AM' }" x-init="
+						setInterval(() => {
+							time = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+						}, 1000)"></div>
+				</div>
+				<div class="toolbar-right">
+					<div class="field-row" style="width: 178px; height: 25px;">
+						<label for="range"><img src="57dffc3c5056a8537bfa6081_Sound 32x32.png" alt=""></label>
+						<input id="range" style="width: 90%;" @change="$refs.theme.volume = $el.value / 50" type="range" min="0" max="50" value="50"/>
+					</div>
+				</div>
+			</div>
+
+			<template x-for="(document, index) in data.documents" :key="index">	
+				<template x-if="documents[index] &amp;&amp; documents[index].open">
+					
+				<div class="window" style="z-index:1;min-width: 1138px; max-width: 2000px; width: 1138px;
+				height: 410px; min-height: 410px; display: block; position: absolute; top: 50%; left: 50%;transform: translate(-50%, -50%)">
+					<div class="title-bar" x-init="dragElement($el)">
+						<div class="title-bar-text" style="user-select: none;" x-text="document.name"></div>
+							<div class="title-bar-controls">
+								<button @click="documents[index].open = false" class="" aria-label="Close"></button>
+							</div>
+						</div>
+						<div class="window-body" style="width: 99%;height: 93%;">
+							<div class="readme-text w-richtext">
+								<pre style="box-shadow: none;">									<template x-for="text in documents[index].data">
+										<p x-text="text"></p>
+									</template>
+								</pre>
+							</div>
+						</div>
+					</div>
+				</template>
+			</template>	
+	</div>
+	
+	<script>
+	function dragElement(elmnt) {
+	var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+	elmnt.onmousedown = dragMouseDown;
+
+	function dragMouseDown(e) {
+		e = e || window.event;
+		e.preventDefault();
+
+		pos3 = e.clientX;
+		pos4 = e.clientY;
+		document.onmouseup = closeDragElement;
+		document.onmousemove = elementDrag;
+	}
+
+	function elementDrag(e) {
+		e = e || window.event;
+		e.preventDefault();
+		pos1 = pos3 - e.clientX;
+		pos2 = pos4 - e.clientY;
+		pos3 = e.clientX;
+		pos4 = e.clientY;
+		elmnt.parentElement.style.top = (elmnt.parentElement.offsetTop - pos2) + "px";
+		elmnt.parentElement.style.left = (elmnt.parentElement.offsetLeft - pos1) + "px";
+	}
+
+	function closeDragElement() {
+		document.onmouseup = null;
+		document.onmousemove = null;
+	}
+	}
+</script>
+</body>
+</html>
