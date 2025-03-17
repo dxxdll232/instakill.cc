@@ -46,6 +46,7 @@
             flex-direction: column;
         }
         
+        
         #entryWindow {
             width: 350px;
             text-align: center;
@@ -115,37 +116,66 @@
     </style>
 </head>
 <body>
-    <div id="overlays" onclick="playMedia()">
-        <div id="overlay-text" class="blink">Click anywhere to enter...</div>
-      </div>
+    <div id="entryOverlay">
+        <div id="entryLogo">
+        </div>
+        
+        <div id="userSelectWindow">
+            <div class="window glass active">
+                <div class="title-bar">
+                    <div class="title-bar-text">select_user.exe</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="window-body has-space">
+                    <p>Select User:</p>
+                    <div class="select-container">
+                        <select id="userSelect">
+                            <option value="CINDER">CINDER :3</option>
+                        </select>
+                    </div>
+                    <div class="ok-button">
+                        <button id="okButton">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="entryWindow" style="display: none;">
+            <div class="window glass active">
+                <div class="title-bar">
+                    <div class="title-bar-text">enter.exe</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="window-body has-space">
+                    <p>- ENTER SITE -</p>
+                    <div id="entryButton">
+                        <button class="blink">CLICK TO ENTER</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="ascii">
         <pre>   
-                                _
-                               / \
-                              / .'_
-                             / __| \
-             `.             | / (-' |
-           `.  \_..._       :  (_,-/
-         `-. `,'     `-.   /`-.__,'
-            `/ __       \ /     /
-            /`/  \       :'    /
-          _,\o\_o/       /    /
-         (_) ___.--.    /    /
-          `-. -._.i \.      :
-             `.\  ( |:.     |
-            ,' )`-' |:..   / \
-   __     ,'   |    `.:.      `.
-  (_ `---:     )      \:.       \
-   ,'     `. .'\       \:.       )
- ,' ,'     ,'  \\ o    |:.      /
-(_,'  ,7  /     \`.__.':..     /,,,
-  (_,'(_,'   _gdMbp,,dp,,,,,,dMMMMMbp,,
-          ,dMMMMMMMMMMMMMMMMMMMMMMMMMMMb,
-       .dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMb,  fsc
-     .dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM,
-    ,MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-   dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.
- .dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMb       
+     $$$$$$\ $$\   $$\    $$\  $$$$$$$$\  $$$$$$\  $$\   $$\ $$$$$$\ $$\       $$\       
+     \_$$  _|$$$\  $$ | $$$$$$\\__$$  __|$$  __$$\ $$ | $$  |\_$$  _|$$ |      $$ |      
+       $$ |  $$$$\ $$ |$$  __$$\  $$ |   $$ /  $$ |$$ |$$  /   $$ |  $$ |      $$ |      
+       $$ |  $$ $$\$$ |$$ /  \__| $$ |   $$$$$$$$ |$$$$$  /    $$ |  $$ |      $$ |      
+       $$ |  $$ \$$$$ |\$$$$$$\   $$ |   $$  __$$ |$$  $$<     $$ |  $$ |      $$ |      
+       $$ |  $$ |\$$$ | \___ $$\  $$ |   $$ |  $$ |$$ |\$$\    $$ |  $$ |      $$ |      
+     $$$$$$\ $$ | \$$ |$$\  \$$ | $$ |   $$ |  $$ |$$ | \$$\ $$$$$$\ $$$$$$$$\ $$$$$$$$\ 
+     \______|\__|  \__|\$$$$$$  | \__|   \__|  \__|\__|  \__|\______|\________|\________| 
+                        \_$$  _/                                                          
+\ _/        
         </pre>
     </div>
 
@@ -155,7 +185,7 @@
                 <div class="profcont">
                     <div class="window profwin glass active">
                         <div class="title-bar">
-                            <div class="title-bar-text">decoy.exe</div>
+                            <div class="title-bar-text">dinero.exe</div>
                             <div class="title-bar-controls">
                                 <button aria-label="Minimize"></button>
                                 <button aria-label="Maximize"></button>
@@ -163,10 +193,10 @@
                             </div>
                         </div>
                         <div class="window-body profbody has-space">
-                            <a href="https://doxbin.com/user/instakiII" target="_blank">
-                                <img src="decoy.png" style="height:120px;border-radius:5px;">
+                            <a href="https://doxbin.com/user/line" target="_blank">
+                                <img src="dinero1.png" style="height:120px;border-radius:5px;">
                             </a>
-                            <h5><strong>decoy</strong></h5>
+                            <h5><strong>Dinero</strong></h5>
                             <p>#1 fed dodger</p>
                             <a href="https://t.me/instakiII" target="_blank">
                                 <img style="height:25px;margin-top:-50px;" src="telegram.png">
@@ -175,7 +205,8 @@
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
+        
         <div class="container">
             <div class="content">
                 <div class="profcont">
@@ -189,7 +220,7 @@
                             </div>
                         </div>
                         <div class="window-body profbody has-space">
-                            <a href="https://doxbin.com/user/instakiII" target="_blank">
+                            <a href="https://doxbin.com/user/line" target="_blank">
                                 <img src="flank.png" style="height:120px;border-radius:5px;">
                             </a>
                             <h5><strong>Flank</strong></h5>
@@ -202,6 +233,7 @@
                 </div>
             </div>
         </div>
+
         <div class="container">
             <div class="content">
                 <div class="profcont">
@@ -248,20 +280,32 @@
     <script src="mzik.js"></script>
 
     <script>
+        document.head.insertAdjacentHTML('beforeend', `
+            <style>
+                #userSelectWindow {
+                    width: 350px;
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                
+                .select-container {
+                    margin: 15px 0;
+                    display: flex;
+                    justify-content: center;
+                }
+                
+                select {
+                    width: 150px;
+                }
+                
+                .ok-button {
+                    margin-top: 10px;
+                    display: flex;
+                    justify-content: center;
+                }
+            </style>
+        `);
 
-      
-      const titles = ['I', 'IN', 'IN$', 'IN$T', 'IN$TA', 'IN$TAK', 'IN$TAKI', 'IN$TAKIL', 'IN$TAKILL', 'IN$TAKILL', 'IN$TAKIL', 'IN$TAKI', 'IN$TAK', 'IN$TA', 'IN$T', 'IN$', 'IN', 'I'];
-      let index = 0;
-
-      function changeTitle() {
-          document.title = titles[index];
-          index = (index + 1) % titles.length;
-          setTimeout(changeTitle, 200); 
-      }
-
-      
-      changeTitle();
-        
         function togglePlayPause() {
             var audio = document.getElementById("audio");
             var playPauseButton = document.getElementById("playPauseButton");
@@ -279,6 +323,13 @@
                 document.getElementById('overlays').style.display = 'none';
                 playMedia();
             }
+        });
+        
+        document.getElementById('okButton').addEventListener('click', function() {
+            var selectedUser = document.getElementById('userSelect').value;
+            
+            document.getElementById('userSelectWindow').style.display = 'none';
+            document.getElementById('entryWindow').style.display = 'block';
         });
         
         document.getElementById('entryButton').addEventListener('click', function() {
