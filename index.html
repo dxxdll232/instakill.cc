@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="script.js"></script> 
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="scanlines.css">
+    
+</head>
+<style>
+  body { 
+        visibility: hidden;
+        cursor: none;
+        overflow-y: hidden;
+        overflow-x: hidden;  
+    }
+    img {
+        width: 100%
+    }
+    hr {
+        border-top: 2px solid #fff 
+    }
+
+    * { 
+        cursor: none;
+
+
+    }
+
+     #cursor-arrow {
+        display: none;
+        position  : absolute;
+        z-index   : 9999999;
+        width     : 40px;
+        height    : 40px;
+        background: transparent url(/cursors/normal.png) 0 0 no-repeat;
+        pointer-events: none;
+    }
+
+    #cursor-pointer {
+        display: none;
+        position  : absolute;
+        z-index   : 9999999;
+        width     : 40px;
+        height    : 40px;
+        background: transparent url(/cursors/pointer.png) 0 0 no-repeat;
+        pointer-events: none;
+    }
+
+    #cursor-text {
+        display: none;
+        position  : absolute;
+        z-index   : 9999999;
+        width     : 40px;
+        height    : 40px;
+        background: transparent url(/cursors/select.png) 0 0 no-repeat;
+        pointer-events: none;
+    }
+
+</style>
+<body class="w-screen h-[100%] crt" style="height: 100%;">
+    <div class="loading fixed w-screen h-screen container-fluid start-up" id="loader" role="main">
+        <div class="row" style="height:100%; width: 100vw; display: flex; justify-content: center; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); position: absolute;margin-right: 0px;margin-left: 0px;">
+            <div class="col-md-3">
+                <div class="jumbotron text-center"> 
+                    <h1><span class="badge badge-pill badge-info" style="background-color: yellow;">System</span></h1>
+                    <br/>
+                    <p class="lead">Program has successfully loaded, please click the continue button below to load and proceed to the program.</p>
+                    <br/>
+                    <a class="btn btn-lg btn-primary" onclick="loader" role="button">Continue »</a>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main hidden max-h-screen h-screen" id="main">
+        
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#"> 
+                            Home <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://breachforums.st/member?action=profile&uid=146767" target="_blank">
+                            BreachForums
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://doxbin.org/user/zj" target="_blank">
+                            Doxbin
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a>
+                            15:00
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Guest <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">ZJ</a></li>
+
+                           
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <pre>
+                    
+  ███████      ██ 
+     ███       ██ 
+    ███        ██ 
+   ███    ██   ██ 
+  ███████  █████  
+                    </pre>
+                
+
+                    <div class="panel bg-transparent col md-3 font-bold overflow-hidden">
+                        <pre style="overflow: hidden; text-align: center; justify-content: center; align-items: center; right: 50%;"><strong>
+膃暠瘉甅甃槊槎f碣綮瘋聟碯颱亦尓㍍i:i:i;;:;:: : :
+皋i袍耘蚌紕欒儼巓襴踟篁f罵f亦尓㍍i:i:i;;:;:: : :
+膩I嶮薤篝爰曷樔黎㌢´　　｀ⅷ踟亦尓㍍i:i:i;;:;:: : :
+歙艇艀裲f睚鳫巓襴骸　　　　　贒憊亦尓㍍i:i:i;;:;:: : :
+殪幢緻I翰儂樔黎夢'”　 　 ,ｨ傾篩縒亦尓㍍i:i:i;;:;:: : :
+盥皋袍i耘蚌紕偸′　　　 雫寬I爰曷f亦尓㍍i:i:i;;:;:: : :
+f篝嚠篩i縒縡齢　　 　 　 Ⅷ辨f篝I鋗f亦尓㍍i:i:i;;:; : : .
+璟輯駲f迯瓲i軌帶′　　　　　`守I厖孩f奎亦尓㍍i:i:i;;:;:: : : .
+f幢儂儼巓襴緲′　 　 　 　 　 `守枢i磬廛i亦尓㍍i:i:i;;:;:: : : .
+嚠篩I縒縡夢'´　　　 　 　 　 　 　 `守峽f徑悗f亦尓㍍i:i:i;;:;:: : : .
+龍蚌紕襴緲′　　　　　　　　　　　　　‘守畝皋弊i劍亦尓㍍i:i:i;;:;:: : : .
+曷f瓲軌揄′　　　　　　　　　　　　　,gf毯綴徑悗嚠迩忙亦尓㍍i:i:i;;:;::
+鳫襴鑿緲'　　　　　　　　　　 　 　 奪寔f厦傀揵猯i爾迩忙亦尓㍍i:i:
+緲′　　　　　　 　 　 　 　 　 　 　 ”'罨悳萪f蒂渹幇f廏迩忙i亦尓㍍
+巓緲′　　　　　　 　 　 　 　 　 　 r㎡℡〟”'罨椁裂滅楔滄愼愰迩忙亦
+巓登zzz zzz㎜㎜ｧg　 　 緲 g　 　 甯體i爺ゎ｡, ”'罨琥焜毳徭i嵬塰慍絲
+軌f襴暹 甯幗緲 ,fi'　　 緲',纜｡　　贒i綟碕碚爺ゎ｡ ”'罨皴發傲亂I黹靱
+襴驫 霤I緲 ,緲　　 ＂,纜穐　　甯絛跨飩i髢馳爺ゎ｡`'等誄I筴碌I畷
+i裲睚亀 篳'’,緲　　g亀 Ⅶil齢　　贒罩硼i艇艀裲睚鳫爺靠飭蛸I裘裔
+絎絲絨i爺i㎜iⅣ 　 ,緲i亀 Ⅶ靈,　　甯傅喩I揵揚惹屡絎痙棏敞裔筴敢
+髢i曷迯瓲軌霤 　 ,緲蔭穐 Ⅶ穐 　 讎椈i棘貅f斐犀耋f絎絲觚f覃黹黍
+肄肆槿f蝓Ⅷ 　 緲$慚I穐,疊穐　 甯萪碾f鋗輜靠f誹臧鋩f褂跫詹i雋 ⠀⠀⠀⠀⠀⠀
+                        </strong></pre>
+                        </div>
+                        <audio src="/music/affiliations.ogg" hidden></audio>
+                        <div class="music-player col md-3">
+                       
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Currently Playing</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Title: <strong class="Title">N/A</strong></p>
+                                    <p>Artist: <strong class="Artist">N/A</strong></p>
+                                </div>
+                                <div class="progress progress-info progress-striped" style="background-color: #fff;">
+                                    <div class="progress-bar" style="width: 10%; height:auto;"></div>
+                                </div>
+                                <div class="panel-footer">
+                                    <button class="btn btn-primary" id="prevBtn">Prev</button>
+                                    <button class="btn btn-primary" id="playPauseBtn">Play</button>
+                                    <button class="btn btn-primary" id="skipBtn">Next</button>
+                                </div>
+                        </div>
+
+                </div>
+                                
+                </div>
+                <div class="col-md-9">
+                    
+                   
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href=""> ZJ v2.3.1 </a>
+                        </li>
+                        <li class="active">
+                            User Profile
+                        </li>
+                    </ol>
+                    
+                   
+                    <div class="alert alert-danger" role="alert">
+                        <strong>ERROR -</strong> Could not authenticate user. Only partial data has been loaded.
+                    </div>
+                    
+
+                    
+                    <div class="row" style="height: 100%;">
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">User Profile</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <p>Username: <strong>ZJ</strong></p>
+                                    <p>Email: <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c4beae84a5a8abeaaaa1">[email&#160;protected]</a></strong></p>
+                                    <br>
+                                    <p>BreachForums: <strong><a href="https://breachforums.st/member?action=profile&uid=146767" target="_blank">ZJJ</a></strong></p>
+                                    <p>Doxbin: <strong><a href="https://doxbin.org/user/zj" target="_blank">ZJ</a></strong></p>
+                                    <br>
+                                    <p>PGP Key: <strong><a href="https://pastebin.com/raw/QaTpByQ5" target="_blank">PGP</a></strong></p>
+                                </div>
+                            </div>
+                        </div>
+                       
+
+                        <div class="col-md-8">
+                            <div class="alert alert-secondary" role="alert" style="height: fit-content;">
+                                <h4 class="alert-heading"><span class="badge badge-pill badge-info" style="background-color: yellow;">System Announcement</span></h4> 
+                                <p>
+                                    nigger nigger nigger
+                                </p>
+                                <br>
+                                <hr>
+                                <p class="mb-auto text-right">Updated On: 10/24/24 12:18:00 UTC</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 100%;">
+                        
+                        <div class="jumbotron jumbotron-fluid">
+                            <div class="container" style="margin-left: 0; margin-right: 0; width: fit-content; margin-top: 10px; margin-bottom: 10px;">
+                                <span class="badge badge-pill badge-info" style="background-color: grey; margin-bottom: 5px;">About Me</span>
+                                <p class="lead">
+                                    okay, kid im done. i doubt you even have basic knowlege of hacking. i doul boot linux so i can run my scripts. you made a big mistake of replying to my comment without using a proxy, because i'm already tracking youre ip. since ur so hacking iliterate, that means internet protocol. once i find your ip i can easily install a backdoor trojan into your pc, not to mention your email will be in my hands. dont even bother turning off your pc, because i can rout malware into your power system so i can turn your excuse of a computer on at any time. it might be a good time to cancel your credit card since ill have that too. if i wanted i could release your home information onto my secure irc chat and maybe if your unlucky someone will come knocking at your door. id highly suggest you take your little comment about me back since i am no script kiddie. i know java and c++ fluently and make my own scripts and source code. because im a nice guy ill give you a chance to take it back. you have 4 hours in unix time, clock is ticking. ill let you know when the time is up by sending you an email to [redacted] which I aquired with a java program i just wrote. see you then :)
+                                </p>
+                            </div>
+                        </div><br>
+                    </div>
+                   
+                    <div class="footer" style="top: 10vh;position: relative;">
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6" >
+                                <p>&copy; zj.wtf</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text-right"></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+            const songs = [
+                {
+                    artist: 'Pierce The Veil',
+                    title: 'Dive in',
+                    file: '/music/dv.mp3'                                 
+                },   
+                {
+                    artist: 'sai nara',
+                    title: 'tone deaf+',
+                    file: '/music/ad.mp3'                                 
+                },   
+                {
+                    artist: '$uicideboy$',
+                    title: 'CLOUDS AS WITNESSES',
+                    file: '/music/wwwwww.mp3'                                 
+                },   
+                {
+                    artist: 'Baby Smoove',
+                    title: 'Lethal Weapon',
+                    file: '/music/ww3.mp3'
+                },   
+                {
+                    artist: 'akakyleY',
+                    title: 'i hope my enemies will die',
+                    file: '/music/i.mp3'
+                },                      
+           
+            ]
+
+            
+            const audio = document.querySelector('audio');
+const playPauseBtn = document.getElementById('playPauseBtn');
+const skipBtn = document.getElementById('skipBtn');
+const prevBtn = document.getElementById('prevBtn');
+const artist = document.querySelector('.music-player .Artist');
+const title = document.querySelector('.music-player .Title');
+let currentSong = 0;
+let isPlaying = false;
+
+
+audio.volume = 0.3 
+audio.src = songs[currentSong].file;
+isPlaying = true; 
+
+playPauseBtn.innerText = 'Pause'; 
+
+
+playPauseBtn.addEventListener('click', () => {
+    if (isPlaying) {
+        audio.pause();
+        playPauseBtn.innerText = 'Play'; 
+    } else {
+        audio.play();
+        playPauseBtn.innerText = 'Pause'; 
+    }
+    isPlaying = !isPlaying; 
+});
+
+
+skipBtn.addEventListener('click', () => {
+    currentSong++;
+    if (currentSong >= songs.length) {
+        currentSong = 0; 
+    }
+    audio.src = songs[currentSong].file;
+    audio.play();
+    artist.innerText = songs[currentSong].artist;
+    title.innerText = songs[currentSong].title;
+    isPlaying = true; 
+    playPauseBtn.innerText = 'Pause'; 
+});
+
+prevBtn.addEventListener('click', () => {
+    currentSong--;
+    if (currentSong < 0) {
+        currentSong = songs.length - 1; 
+    }
+    audio.src = songs[currentSong].file;
+    audio.play();
+    artist.innerText = songs[currentSong].artist;
+    title.innerText = songs[currentSong].title;
+    isPlaying = true; 
+    playPauseBtn.innerText = 'Pause'; 
+});
+
+
+audio.addEventListener('ended', () => {
+    currentSong++;
+    if (currentSong >= songs.length) {
+        currentSong = 0; 
+    }
+    audio.src = songs[currentSong].file;
+    audio.play();
+    artist.innerText = songs[currentSong].artist;
+    title.innerText = songs[currentSong].title;
+});
+
+
+           
+            const loader = document.getElementById('loader')
+            const main = document.getElementById('main')
+
+            loader.addEventListener('click', () => {
+                loader.classList.add('hidden')
+                main.classList.remove('hidden')
+                document.body.style.visibility = 'visible'
+
+                
+                audio.src = songs[currentSong].file
+                audio.play()
+                artist.innerText = songs[currentSong].artist
+                title.innerText = songs[currentSong].title
+            })
+
+            
+            const moved = false
+            document.addEventListener('mousemove', () => {
+                if (!moved) {
+                    document.querySelector('#cursor-arrow').style.display = 'block'
+                    moved = true
+                }
+            })
+
+           
+            audio.addEventListener('timeupdate', () => {
+                const progress = (audio.currentTime / audio.duration) * 100
+                document.querySelector('.progress-bar').style.width = `${progress}%`
+            })
+
+            
+
+            document.addEventListener('mousemove', e => {
+                document.querySelector('#cursor-arrow').style.left = e.pageX + 'px'
+                document.querySelector('#cursor-arrow').style.top = e.pageY + 'px'
+                document.querySelector('#cursor-pointer').style.left = e.pageX + 'px'
+                document.querySelector('#cursor-pointer').style.top = e.pageY + 'px'
+                document.querySelector('#cursor-text').style.left = e.pageX + 'px'
+                document.querySelector('#cursor-text').style.top = e.pageY + 'px'
+            })
+
+
+            
+            document.querySelectorAll('button, a').forEach(el => {
+                el.addEventListener('mouseover', () => {
+                    
+                    document.querySelector('#cursor-pointer').style.display = 'block'
+                    document.querySelector('#cursor-arrow').style.display = 'none'
+                    
+
+
+                })
+                el.addEventListener('mouseout', () => {
+                    
+                    document.querySelector('#cursor-pointer').style.display = 'none'
+                    document.querySelector('#cursor-arrow').style.display = 'block'
+                })
+            })
+
+            
+            document.querySelectorAll('input, textarea').forEach(el => {
+                el.addEventListener('mouseover', () => {
+                   
+                    document.querySelector('#cursor-text').style.display = 'block'
+                    document.querySelector('#cursor-arrow').style.display = 'none'
+                })
+                el.addEventListener('mouseout', () => {
+                    
+                    document.querySelector('#cursor-text').style.display = 'none'
+                    document.querySelector('#cursor-arrow').style.display = 'block'
+                })
+            })
+
+           
+            document.addEventListener('mousemove', () => {
+                if (document.querySelector('#cursor-pointer').style.display === 'none' && document.querySelector('#cursor-text').style.display === 'none') {
+                    document.querySelector('#cursor-arrow').style.display = 'block'
+                }
+            })
+            
+        </script>
+ <script> document.addEventListener('contextmenu', function(e){
+    e.preventDefault();
+    });
+
+    document.onkeydown = function(e) {
+        if(event.keyCode == 123) {
+           return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+           return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+           return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+           return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+           return false;
+        }
+          if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+           return false;
+        }
+          if(e.keyCode == 'F12'.charCodeAt(0)) {
+           return false;
+        }
+      }
+      </script>
+       <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+       <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+        <script src="dist/js/bootstrap.min.js"></script>
+    </div>
+    <div id="cursor-arrow"></div>
+    <div id="cursor-pointer"></div>
+    <div id="cursor-text"></div>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"92257c873cc766d9","version":"2025.1.0","r":1,"token":"576e71c0bf104774ae845d6f5c59d5f8","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+</body>
+</html>
