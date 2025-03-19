@@ -108,7 +108,7 @@ body {
 #toolbar .toolbar-start-menu .start-menu-wrapper .start-menu-title {
   height: 100%;
   padding: 5px 5px;
-  background: linear-gradient(90deg, #00007b 0%, #00f 5%, #00007b 100%);
+  background: linear-gradient(90deg, #ff0000 0%, #00f 5%, #ff0000 100%);
   color: #fff;
   width: 40px;
   float: left;
