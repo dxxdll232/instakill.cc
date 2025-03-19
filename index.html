@@ -41,36 +41,35 @@
       });
     });
   </script>
-	<div id="enter" x-show="data.showLogin == true" :style="data.background == `` || data.background == undefined ? `background-color:#007979;` : `background-image: url(bg.jpeg);z-index:4;`">
-		<div class="window active" style="transform: translate(-50%, -50%) !important;min-width: 440px;">
-			<div class="window-toolbar">
-				<div class="window-title" style="text-align: start;">Welcome To Windows</div>
-				<div class="window-buttons">
-					<div class="window-button close"></div>
-					<div class="window-button help"></div>
-				</div>
-			</div>
-			<div class="window-wrapper">
-				<div class="window-contentx" style="margin-top: 1rem;display: flex;justify-content: space-around;border: none;">
-					<img src="password.png" style="width: 54px;height: 51px;">
-					<form id="login" style="margin-left: 2rem; ">
-						<div style="color: black;">							
-							<p style="margin-bottom: 1rem;">Type a user name and password to log on to Windows.</p>
-							<br>
-							<div class="field-row">
-								<label for="username">Username</label>
-								<input x-ref="username" style="margin-left: 1rem;width: 10rem;" id="username" type="text">
-							</div>
-							<div class="field-row">
-								<label for="password">Password</label>
-								<input x-ref="password" style="margin-left: 1rem;width: 10rem;" id="password" type="password">
-							</div>
-						</div>
-					</form>
-					<div style="width: 20%;">
-						<button @click="if((data.username == `` &amp;&amp; data.password == ``)|| ($refs.username.value == data.username &amp;&amp; $refs.password.value == data.password)){data.showLogin = false, $refs.theme.play()}" style="margin-bottom: 0.2rem;" class="window-action-button main">OK</button>
-						<button type="reset" form="login" class="window-action-button main">Cancel</button>
-					</div>
+  <div id="enter">
+    <div class="window enter-screen">
+      <div class="title-bar">
+        <div class="title-bar-text">User Login</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-wrapper">
+        <div class="window-content">
+          <form>
+            <fieldset>
+              <legend>Login</legend>
+
+
+              <p>Select a user to login to</p>
+              <select name="wallpaper" size="1">
+                <option>IN$TAKILL</option>
+              </select>
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="window-actions">
+          <button class="window-action-button main">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
   
   <div id="main">
     <div id="desktop">
