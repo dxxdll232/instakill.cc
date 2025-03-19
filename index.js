@@ -29,9 +29,9 @@ function addPopupListeners(popupId, closeBtnClass, okBtnClass) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  addPopupListeners("PopUpScrewed", "DecoyClose", "DecoyOK");
-  addPopupListeners("PopUpBobby", "FlankClose", "FlankOK");
-  addPopupListeners("PopUpGalaxyArts", "DormClose", "DormOK");
+  addPopupListeners("PopUpDecoy", "DecoyClose", "DecoyOK");
+  addPopupListeners("PopUpFlank", "FlankClose", "FlankOK");
+  addPopupListeners("PopUpDorm", "DormClose", "DormOK");
 });
 
 let date = new Date();
