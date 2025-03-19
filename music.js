@@ -14,9 +14,24 @@ var audio = document.getElementById("audio");
 var playPauseButton = document.getElementById("playPauseButton");
 var audioFiles = [
         {
-        src: "song.mp3",
-        artist: "Ð§ÐµÑ€Ð½Ð¾Ð±Ñ‹Ð»ÑŒ",
-        song: "Ð‘ÐµÐ·Ð´Ð½Ð°"
+        src: "TREFUEGO.mp3",
+        artist: "TREFUEGO",
+        song: "miss me"
+        },
+        {
+        src: "drama.mp3",
+        artist: "osquinn",
+        song: "drama"
+        },
+        {
+        src: "headshot.mp3",
+        artist: "district",
+        song: "headshot"
+        },
+        {
+        src: "RKO.mp3",
+        artist: "RKO",
+        song: "Gas talkin"
         },
 ];
 
