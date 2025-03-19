@@ -200,20 +200,20 @@ body {
   margin: 10px;
 }
 
-.desktop-icons .desktop-icon.screwed {
+.desktop-icons .desktop-icon.decoy {
   background-image: url(decoy.png);
   background-repeat: no-repeat;
   background-size: 48px 48px;
   z-index: 100 !important;
 }
 
-.desktop-icons .desktop-icon.bobby {
+.desktop-icons .desktop-icon.flank {
   background-image: url(flank.png);
   background-repeat: no-repeat;
   background-size: 48px 48px;
 }
 
-.desktop-icons .desktop-icon.GalaxyArts {
+.desktop-icons .desktop-icon.dorm {
   background-image: url(dorm.png);
   background-repeat: no-repeat;
   background-size: 48px 48px;
