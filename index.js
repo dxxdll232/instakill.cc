@@ -59,7 +59,7 @@ if (window.matchMedia("(max-width: 767px)").matches) {
     button.addEventListener('click', function() {
       counter++;
       if (counter % 2 === 1) {
-        desktop.style.backgroundImage = 'url(.png)';
+        desktop.style.backgroundImage = 'url(retard.jpg)';
       } else {
         desktop.style.backgroundImage = 'url(bg.jpeg)';
       }
