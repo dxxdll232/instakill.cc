@@ -13,10 +13,11 @@ document.addEventListener("DOMContentLoaded", function() {
               <span style="margin-left: auto;">►</span>
             </div>
             
-            <div class="menu-item documents-menu-item" style="padding: 5px; display: flex; align-items: center; position: relative; background-color: #c0c0c0;">
-              <span style="width: 20px; display: inline-block; margin-right: 5px;">📁</span>
-              <span>Documents</span>
-              <span style="margin-left: auto;">►</span>
+<div class="menu-item documents-menu-item" style="padding: 5px; display: flex; align-items: center; position: relative; background-color: #c0c0c0;">
+  <img src="documents.png" alt="Documents" style="width: 20px; height: 20px; margin-right: 5px;">
+  <span>Documents</span>
+  <span style="margin-left: auto;">►</span> 
+</div>
               
               <div class="documents-submenu" style="display: none; position: absolute; left: 100%; top: 0; width: 180px; background-color: #c0c0c0; border: 2px outset #fff;">
                 <div class="doc-item" data-doc="sleepthegod" style="padding: 5px; display: flex; align-items: center;">
@@ -42,11 +43,11 @@ document.addEventListener("DOMContentLoaded", function() {
               </div>
             </div>
             
-            <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
-              <span style="width: 20px; display: inline-block; margin-right: 5px;">⚙️</span>
-              <span>Settings</span>
-              <span style="margin-left: auto;">►</span>
-            </div>
+<div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
+  <img src="settings.png" alt="Settings" style="width: 20px; height: 20px; margin-right: 5px;">
+  <span>Settings</span>
+  <span style="margin-left: auto;">►</span>
+</div>
             
             <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
               <span style="width: 20px; display: inline-block; margin-right: 5px;">🔍</span>
