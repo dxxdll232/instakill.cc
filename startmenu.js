@@ -55,19 +55,19 @@ document.addEventListener("DOMContentLoaded", function() {
            </div>
             
             <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
-            <img src="Help.png" alt="Find" style="width: 20px; height: 20px; margin-right: 5px;">
+              <img src="Help.png" alt="Find" style="width: 20px; height: 20px; margin-right: 5px;">
               <span>Help</span>
             </div>
             
             <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
-            <img src="Run.png" alt="Find" style="width: 20px; height: 20px; margin-right: 5px;">
+              <img src="Run.png" alt="Find" style="width: 20px; height: 20px; margin-right: 5px;">
               <span>Run...</span>
             </div>
             
             <div style="height: 1px; background-color: #888; margin: 5px 0;"></div>
             
             <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
-            <img src="ShutDown.png" alt="Find" style="width: 20px; height: 20px; margin-right: 5px;">
+              <img src="ShutDown.png" alt="Find" style="width: 20px; height: 20px; margin-right: 5px;">
               <span>Shut Down...</span>
             </div>
           </div>
