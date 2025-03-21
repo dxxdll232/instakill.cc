@@ -81,6 +81,6 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) {
-    document.getElementById("mobile-notice").innerHTML = "(View on PC for a better experience)";
+    document.getElementById("mobile-notice").innerHTML = "";
   }
 });
