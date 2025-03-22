@@ -179,6 +179,6 @@ var colour="random";
         }
     
         function newColour() {
-          return "rgb(255, 255, 255)";
+          return "rgb(55, 242, 34)";
         }
         
