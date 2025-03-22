@@ -3,71 +3,70 @@ document.addEventListener("DOMContentLoaded", function() {
       const startMenuHTML = `
       <div id="win95-start-menu" style="display: none; position: absolute; bottom: 30px; left: 0; width: 200px; background-color: #c0c0c0; border: 2px outset #fff; box-shadow: 2px 2px 4px rgba(0,0,0,0.5); z-index: 9999;">
         <div style="display: flex;">
-          <div style="width: 25px; background-color: #c0c0c0; color: white; writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); padding: 10px 0; font-weight: bold;">
+          <div style="width: 25px; background-color: #000080; color: white; writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); padding: 10px 0; font-weight: bold;">
             Windows 95
           </div>
           <div style="flex: 1;">
-           <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
-           <span style="width: 20px; display: inline-block; margin-right: 5px;">⚙️</span>
-           <span>Programs</span>
-           <span style="margin-left: auto;">►</span>
-          </div>
+            <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
+              <span style="width: 20px; display: inline-block; margin-right: 5px;">🖥️</span>
+              <span>Programs</span>
+              <span style="margin-left: auto;">►</span>
+            </div>
             
-             <div class="menu-item documents-menu-item" style="padding: 5px; display: flex; align-items: center; position: relative; background-color: #c0c0c0;">
-              <span style="width: 20px; display: inline-block; margin-right: 5px;">⚙️</span>
+            <div class="menu-item documents-menu-item" style="padding: 5px; display: flex; align-items: center; position: relative; background-color: #c0c0c0;">
+              <span style="width: 20px; display: inline-block; margin-right: 5px;">📁</span>
               <span>Documents</span>
-              <span style="margin-left: auto;">►</span> 
-             </div>
+              <span style="margin-left: auto;">►</span>
               
               <div class="documents-submenu" style="display: none; position: absolute; left: 100%; top: 0; width: 180px; background-color: #c0c0c0; border: 2px outset #fff;">
                 <div class="doc-item" data-doc="sleepthegod" style="padding: 5px; display: flex; align-items: center;">
-                  <<span style="width: 20px; display: inline-block; margin-right: 5px;">⚙️</span>
+                  <span style="width: 20px; display: inline-block; margin-right: 5px;">📄</span>
                   <span>SleepTheGod</span>
                 </div>
                 <div class="doc-item" data-doc="underpants22" style="padding: 5px; display: flex; align-items: center;">
-                  <span style="width: 20px; display: inline-block; margin-right: 5px;">⚙️</span>
+                  <span style="width: 20px; display: inline-block; margin-right: 5px;">📄</span>
                   <span>Underpants22</span>
                 </div>
                 <div class="doc-item" data-doc="conreppin" style="padding: 5px; display: flex; align-items: center;">
-                  <span style="width: 20px; display: inline-block; margin-right: 5px;">⚙️</span>
+                  <span style="width: 20px; display: inline-block; margin-right: 5px;">📄</span>
                   <span>conreppin</span>
                 </div>
                 <div class="doc-item" data-doc="mourn" style="padding: 5px; display: flex; align-items: center;">
-                  <span style="width: 20px; display: inline-block; margin-right: 5px;">⚙️</span>
+                  <span style="width: 20px; display: inline-block; margin-right: 5px;">📄</span>
                   <span>Mourn</span>
                 </div>
                 <div class="doc-item" data-doc="white" style="padding: 5px; display: flex; align-items: center;">
-                  <span style="width: 20px; display: inline-block; margin-right: 5px;">⚙️</span>
+                  <span style="width: 20px; display: inline-block; margin-right: 5px;">📄</span>
                   <span>White</span>
                 </div>
               </div>
             </div>
             
-          <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
-           <span style="width: 20px; display: inline-block; margin-right: 5px;">⚙️</span>
-           <span>Settings</span>
-           <span style="margin-left: auto;">►</span>
-          </div>
-            
-          <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
-            <span style="width: 20px; display: inline-block; margin-right: 5px;">⚙️</span>
-            <span>Find</span>
-           </div>
-            
             <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
               <span style="width: 20px; display: inline-block; margin-right: 5px;">⚙️</span>
+              <span>Settings</span>
+              <span style="margin-left: auto;">►</span>
+            </div>
+            
+            <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
+              <span style="width: 20px; display: inline-block; margin-right: 5px;">🔍</span>
+              <span>Find</span>
+            </div>
+            
+            <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
+              <span style="width: 20px; display: inline-block; margin-right: 5px;">❓</span>
               <span>Help</span>
             </div>
             
             <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
-              <span style="width: 20px; display: inline-block; margin-right: 5px;">⚙️</span>
+              <span style="width: 20px; display: inline-block; margin-right: 5px;">▶️</span>
               <span>Run...</span>
             </div>
             
             <div style="height: 1px; background-color: #888; margin: 5px 0;"></div>
             
             <div class="menu-item" style="padding: 5px; display: flex; align-items: center;">
-              <span style="width: 20px; display: inline-block; margin-right: 5px;">⚙️</span>
+              <span style="width: 20px; display: inline-block; margin-right: 5px;">🔌</span>
               <span>Shut Down...</span>
             </div>
           </div>
