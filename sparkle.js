@@ -1,5 +1,5 @@
 var colour="random";
-        var sparkles=300;
+        var sparkles=150;
     
         var x=ox=400;
         var y=oy=300;
