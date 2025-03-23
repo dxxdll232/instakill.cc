@@ -1,0 +1,502 @@
+ 
+@font-face {
+    font-family: 'FreeSerif';
+    src: url('FreeSerif-YO4a.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Jackeyfont';
+    src: url('jackeyfont.woff') format('woff');
+}
+
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	overflow: hidden;
+}
+
+
+
+body {
+	font-family: 'MS Sans Serif';
+	letter-spacing: 0.001em;
+	font-size: 14px;
+	font-smooth: none;
+}
+
+#main {
+	z-index: 3;
+}
+
+.center {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+[x-cloak] { display: none !important; }
+
+#enter {
+	top: 0;
+	left: 0;
+	z-index: 999;
+	opacity: 1;
+	height: 100vh;
+	width: 100vw;
+	cursor: pointer;
+	position: fixed;
+	text-align: center;
+	background-color: #007979;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+
+	height: 100vh;
+	color: #fff;
+	transition: opacity .5s;
+	overflow: hidden;
+	z-index: 4;
+}
+
+.setting-options-text { 
+    position: relative; 
+    left: 10px; 
+    top: 4px; 
+    display: inline; 
+    width: 100px;
+} 
+
+.settings-wrapper {
+    position: fixed;
+    left: 298px;
+    top: 230px;
+    bottom: 0px;
+    z-index: 3;
+    width: 222px;
+    height: auto;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #fff #4b4b4b #4b4b4b #fff;
+    background-color: #c3c3c3;
+} 
+
+.control-panel-button { 
+    position: relative; 
+    width: 100%; 
+    height: 31px; 
+    padding-bottom: 4px; 
+    padding-left: 15px; 
+    cursor: pointer;
+} 
+
+.control-panel-button:hover { 
+    background-color: #02007f; 
+    color: #fff;
+}
+
+.float-container {
+    padding: 20px;
+}
+
+.float-child1 {
+    width: 20%;
+    float: left;
+    text-align: center;
+	min-width: 48px;
+	min-height: 48px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 20px;
+}  
+
+.float-child2 {
+    width: 80%;
+    float: left;
+    padding: 20px;
+}
+
+#desktop {
+	position: absolute;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100vw;
+	z-index: -300
+}
+
+#toolbar {
+	background: #c0c0c0;
+	height: 35px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	border-top: 2px solid #fff;
+}
+
+#toolbar .toolbar-start-menu {
+	float: left;
+}
+
+#toolbar .toolbar-start-menu .start-button {
+	background: url(https://win98icons.alexmeub.com/icons/png/windows-0.png) no-repeat 2px center / 24px;
+	padding-left: 28px;
+	padding-right: 5px;
+	height: 29px;
+	margin: 2px 3px;
+	font-weight: bold;
+	border: 2px solid #7c7c7c;
+	border-top-color: #fff;
+	border-left-color: #fff;
+}
+
+#toolbar .toolbar-start-menu .start-button:hover {
+	background-color: #a7a7a7;
+}
+
+#toolbar .toolbar-start-menu .start-menu-wrapper {
+	border: 2px solid #7c7c7c;
+	border-top-color: #fff;
+	border-left-color: #fff;
+	background: #c0c0c0;
+	position: fixed;
+	left: 2px;
+	bottom: 33px;
+	width: 190px;
+	min-height: 200px;
+}
+
+#toolbar .toolbar-start-menu .start-menu-wrapper .start-menu-title {
+	height: 100%;
+	padding: 5px 5px;
+	background: linear-gradient(90deg, #00007b 0%, #00f 5%, #00007b 100%);
+	color: #fff;
+	width: 40px;
+	float: left;
+	text-transform: uppercase;
+	font-size: 20px;
+	position: absolute;
+}
+
+#toolbar .toolbar-start-menu .start-menu-wrapper .start-menu-title span {
+	transform: rotate(-90deg);
+	transform-origin: left 0;
+	position: absolute;
+	left: 10px;
+	bottom: -10px;
+}
+
+#toolbar .toolbar-start-menu .start-menu-wrapper .start-menu {
+	margin-left: 40px;
+}
+
+#toolbar .toolbar-separator {
+	width: 2px;
+	height: 26px;
+	margin-top: 2px;
+	background: #797979;
+	float: left;
+	border-right: 1px solid #fff;
+}
+
+#toolbar .toolbar-left {
+	float: left;
+	padding: 0 5px;
+}
+
+#toolbar .toolbar-icon {
+	background: no-repeat center / auto 20px;
+	width: 25px;
+	height: 25px;
+	border: none;
+	margin-top: 3px;
+	margin: 3px 2px;
+}
+
+#toolbar .toolbar-icon.user {
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	z-index: 100 !important;
+}
+
+#toolbar .toolbar-right {
+	float: right;
+	margin: 2px 3px;
+	height: 29px;
+	border: 2px solid #7c7c7c;
+	border-bottom-color: #fff;
+	border-right-color: #fff;
+}
+
+#toolbar .toolbar-right .time {
+	padding: 6px 10px;
+}
+
+.desktop-icons .desktop-icon {
+	width: 115px;
+	height: 100px;
+	color: #fff;
+	text-align: center;
+	background: no-repeat center top;
+	padding-top: 55px;
+	margin: 10px;
+}
+
+.desktop-icons .desktop-icon.user {
+	background-repeat: no-repeat;
+	background-size: 48px 48px;
+	z-index: 100 !important;
+}
+
+.window {
+	border: 2px solid #7c7c7c;
+	border-top-color: #fff;
+	border-bottom-color: #131313;
+	border-left-color: #fff;
+	background: #c0c0c0;
+	width: 90%;
+	max-width: 500px;
+	position: absolute;
+	top: 50% ;
+	left: 50% ;
+	resize: both;
+}
+
+.window .window-toolbar {
+	background: #000080;
+	color: #fff;
+	padding: 4px;
+	font-weight: bold;
+}
+
+.window .window-buttons {
+	position: absolute;
+	right: 2px;
+	top: 2px;
+}
+
+.window .window-buttons .window-button {
+	background: no-repeat center #ccc;
+	border: 2px solid #7c7c7c;
+	border-top-color: #fff;
+	border-left-color: #fff;
+	height: 17px;
+	width: 17px;
+	float: right;
+	margin-left: 2px;
+}
+
+.window .window-buttons .window-button.close {
+	background-image: url(https://win98icons.alexmeub.com/images/close-icon.png);
+}
+
+.window .window-buttons .window-button.help {
+	background-image: url(https://win98icons.alexmeub.com/images/question-icon.png);
+}
+
+.window .window-tabs {
+	overflow: hidden;
+	padding-top: 2px;
+}
+
+.window .window-tabs .tabs-button {
+	background: none;
+	border: none;
+	padding: 5px 8px;
+	float: left;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	border-radius: 3px 3px 0 0;
+	border-right: 2px solid #666;
+	margin: 0;
+}
+
+.window .window-tabs .tabs-button:first-child {
+	border-left: 1px solid #fff;
+}
+
+.window .window-tabs .tabs-button.active {
+	border-bottom: none;
+	padding-top: 7px;
+	margin-top: -2px;
+}
+
+.window .window-content {
+	padding: 15px;
+	border: 1px solid #fff;
+	border-top: none;
+	position: relative;
+}
+
+.window .window-wrapper {
+	padding: 10px;
+}
+
+.window .window-wrapper fieldset {
+	border: 1px solid #7c7c7c;
+	padding: 10px;
+	position: relative;
+}
+
+.window .window-wrapper fieldset::before {
+	content: " ";
+	position: absolute;
+	z-index: 100;
+	bottom: -2px;
+	left: 0;
+	width: calc(100% + 1px);
+	height: calc(100% - 7px);
+	border: 1px solid #fff;
+}
+
+.window .window-wrapper fieldset legend {
+	padding: 0 3px;
+	background: #c0c0c0;
+}
+
+.window .window-wrapper fieldset select {
+	width: 100%;
+	margin: 15px 0;
+}
+
+.window .window-wrapper fieldset select option {
+	background: url(https://win98icons.alexmeub.com/icons/png/paint_file-1.png) no-repeat 2px 2px;
+	background-size: auto 14px;
+	padding: 2px 3px 0 18px;
+	vertical-align: middle;
+}
+
+.window .window-wrapper fieldset select option:first-child {
+	background-image: url(https://win98icons.alexmeub.com/icons/png/no2-1.png);
+}
+
+.window .window-wrapper fieldset p::first-letter {
+	text-decoration: underline;
+}
+
+.window .window-actions {
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+.window .window-actions .window-action-button {
+	border: 1px solid #131313;
+	border-top-color: #fff;
+	border-left-color: #fff;
+	background: #c0c0c0;
+	width: 75px;
+	text-align: center;
+	padding: 5px 0;
+	float: right;
+	margin-left: 5px;
+}
+
+.custom-button {
+	border: none !important;
+}
+
+h4 {
+	text-transform: uppercase;
+	font-size: 2px;
+	font-family: 'VCR OSD Mono', sans-serif;
+}
+
+.windows2{
+	border: 2px solid #7c7c7c;
+    border-top-color: #fff;
+    border-bottom-color: #131313;
+    border-left-color: #fff;
+    background: #c0c0c0;
+    width: 90%;
+    max-width: 500px;
+    position: absolute;
+    /* top: 50% !important; */
+    /* left: 50% !important; */
+    transform: translate(-50%, -50%) !important;
+    resize: both;
+}
+
+.hanginggirl {
+    margin-top: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden !important;
+    max-height: 400px;
+    filter: grayscale(1) contrast(200%);
+	position: fixed;
+}
+
+.animated {
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.animated.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes swing {
+
+    50% {
+        -webkit-transform: rotate3d(0, 0, 1, -6deg);
+        transform: rotate3d(0, 0, 1, -6deg);
+    }
+
+
+    to {
+        -webkit-transform: rotate3d(0, 0, 1, 6deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
+
+@keyframes swing {
+    50% {
+        -webkit-transform: rotate3d(0, 0, 1, -6deg);
+        transform: rotate3d(0, 0, 1, -6deg);
+    }
+
+
+    to {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
+
+.swing {
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-animation-name: swing;
+    animation-name: swing;
+}
+
+.nodrag {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+	h4 {
+		position: absolute;
+		text-transform: uppercase !important;
+		font-size: 1em !important;
+		font-family: 'VCR OSD Mono', sans-serif !important;
+		padding: 60px;
+		width: 70%;
+		text-align: center;
+		top: 0;
+		left: 0;
+		padding-top: 20px;
+		margin-left: 150px;
+		z-index: 0;
+	}
+}
