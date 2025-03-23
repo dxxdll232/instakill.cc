@@ -321,9 +321,9 @@ h4 {
 }
 
 .image-spider img {
-  width: 750px;
+  width: 950px;
   height: auto;
-  max-width: 550px;
-  animation: swing 4s infinite ease-in-out;
+  max-width: 950px;
+  animation: swing 3s infinite ease-in-out;
   transform-origin: top center;
 }
