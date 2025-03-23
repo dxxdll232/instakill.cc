@@ -314,7 +314,7 @@ h4 {
   left: 48.7%;
   transform: translate(-50%, -50%);
   filter: grayscale(1) contrast(200%);
-  max-width: 500px;
+  max-width: 900px;
   height: auto;
   pointer-events: none;
   z-index: 10;
