@@ -313,17 +313,17 @@ h4 {
   top: 25%;
   left: 48.7%;
   transform: translate(-50%, -50%);
-  filter: grayscale(1) contrast(200%);
-  max-width: 800px;
+  filter: grayscale(1) contrast(100%);
+  max-width: 500px;
   height: auto;
   pointer-events: none;
   z-index: 10;
 }
 
 .image-spider img {
-  width: 850px;
+  width: 750px;
   height: auto;
-  max-width: 850px;
-  animation: swing 3s infinite ease-in-out;
+  max-width: 550px;
+  animation: swing 2s infinite ease-in-out;
   transform-origin: top center;
 }
