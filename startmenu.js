@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("Minimal start menu script loaded");
       const startMenuHTML = `
-      <div id="win95-start-menu" style="display: none; position: absolute; bottom: 30px; left: 0; width: 200px; background-color: #6c6c6c; border: 2px outset #fff; box-shadow: 2px 2px 4px rgba(0,0,0,0.5); z-index: 9999;">
+      <div id="win95-start-menu" style="display: none; position: absolute; bottom: 30px; left: 0; width: 200px; background-color: #c0c0c0; border: 2px outset #fff; box-shadow: 2px 2px 4px rgba(0,0,0,0.5); z-index: 9999;">
         <div style="display: flex;">
-          <div style="width: 25px; background-color: #c0c0c0; color: white; writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); padding: 10px 0; font-weight: bold;">
+          <div style="width: 25px; background-color: #6c6c6c; color: white; writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); padding: 10px 0; font-weight: bold;">
             Windows 95
           </div>
           <div style="flex: 1;">
