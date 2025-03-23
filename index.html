@@ -24,9 +24,6 @@
   <script src="audio.js"></script>
   <link rel="stylesheet" href="startmenu.css">
 <script src="startmenu.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="menu.css">
-  <link rel="stylesheet" href="notepad.css">
 
   <title>IN$TAKILL</title>
   <meta name="theme-color" content="#000">
@@ -35,47 +32,7 @@
   <meta property="og:type" content="website">
   <meta property="og:description" content="">
 </head>
-  <div id="main">
-    <div id="desktop">
-      <div id="toolbar">
-        <div class="toolbar-start-menu">
-          <button class="start-button" @click="menu = !menu">Start</button>
-        </div>
-        
-        <!-- Start Menu -->
-        <template x-if="menu">
-          <div x-cloak class="start-menu" style="display: block;position: fixed;">
-            <div class="start-menu-wrapper" style="opacity: 1; transition: opacity 2ms ease-in 0s; display: block;">
-              <div class="start-menu-side-text w-row">
-                <div class="start-menu-side-text w-col w-col-2">
-                  <div class="start-menu-side-text wrapper">
-                    <div class="start-menu-win-95-text"><strong>Windows</strong>&nbsp;</div>
-                    <div class="_95 start-menu-win-95-text"><strong class="_95">95</strong></div>
-                  </div>
-                </div>
-                <div class="start-menu-options-column w-col w-col-10" style="user-select: none;">
-                  <div class="start-menu-options"><img src="images/icons/Programs32x32.png" width="41">
-                    <div class="programs start-menu-options-text"><span class="program-p">P</span>rograms</div><img class="menu-arrow programs" src="images/icons/Menu-20Arrow.png" width="16">
-                  </div>
-                  <div @click="readme = !readme" class="start-menu-options"><img src="images/icons/Documents-2032x32.png" width="41">
-                    <div class="programs start-menu-options-text"><u>D</u>ocuments</div><img class="documents menu-arrow" src="images/icons/Menu-20Arrow.png" width="16">
-                  </div>
-                  <div class="start-menu-options"><img src="images/icons/Settings-2032x32.png" width="41">
-                    <div class="programs start-menu-options-text"><u>S</u>ettings</div><img class="menu-arrow settings" src="images/icons/Menu-20Arrow.png" width="16">
-                  </div>
-                  <div class="start-menu-options"><img src="images/icons/Find-2032x32.png" width="41">
-                    <div class="programs start-menu-options-text"><u>F</u>ind</div><img class="find menu-arrow" src="images/icons/Menu-20Arrow.png" width="16">
-                  </div>
-                  <div class="start-menu-options"><img src="images/icons/Help-2032x32.png" width="41">
-                    <div class="programs start-menu-options-text"><u>H</u>elp</div>
-                  </div>
-                  <div class="start-menu-options"><img src="images/icons/Run-2032x32.png" width="41">
-                    <div class="programs start-menu-options-text"><u>R</u>un</div>
-                  </div>
-                  <a @click="data.showLogin = true" style="color:black" class="shutdown start-menu-options"><img src="images/icons/Shut-20Down-2032x32.png" width="41">
-                    <div class="programs shutdown start-menu-options-text">Shut Down...</div>
-                  </a>
-                </div>
+  
 <body>
   <script>
     $(function () {
