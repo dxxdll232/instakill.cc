@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,59 +7,58 @@
    <title>IN$TAKILL</title>
     
    <meta property="og:title" content="IN$TAKILL">
-  <meta property="og:description" content="fetch me their souls.">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
+   <meta property="og:description" content="fetch me their souls.">
+   <meta property="og:image" content="">
+   <meta property="og:url" content="">
    <meta property="og:type" content="website">
-   <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+   
+   <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
-       </script>
-      
    <style>
-        
-         body {
-           
-            background-color: #000000 ; 
+        body {
+            background-color: #000;
             color: white;
             font-family: 'VT323', sans-serif;
-            font-size: 16px;
+            font-size: 18px;
             padding: 20px;
             cursor: none;
-            line-height: 1.4; 
+            line-height: 1.6;
+            overflow: hidden;
         }
+
         #output {
             white-space: pre-wrap;
             overflow: hidden;
         }
+
         .cursor {
             display: inline-block;
             width: 10px;
             height: 20px;
             background-color: white;
-            animation: blink 0.3s infinite;
+            animation: blink 0.6s infinite;
         }
+
         @keyframes blink {
             50% { opacity: 0; }
         }
-        .user {
-            color: red;
-        }
-        .command {
-            color: lightblue;
-        }
-        .output {
-            color: lightgray;
-        }
+
+        .user { color: red; }
+        .command { color: lightblue; }
+        .output { color: lightgray; }
+
         .clickable {
             color: white;
-            text-decoration: none; 
+            text-decoration: none;
             cursor: pointer;
-            transition: background-color 0.2s ease-in-out;
+            transition: all 0.3s ease-in-out;
         }
+
         .clickable:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+            text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
         }
+
         .ring {
             position: absolute;
             width: 40px;
@@ -69,15 +67,17 @@
             border-radius: 50%;
             pointer-events: none;
             transform: translate(-50%, -50%);
-            mix-blend-mode: difference; 
+            mix-blend-mode: difference;
+            transition: transform 0.05s linear;
         }
     </style>
 </head>
 <body>
     <div id="output"></div>
     <div class="ring" id="ring"></div>
+
     <script>
-         const text = `<span class='user'>user@instakill:~$</span> <span class='command'>sudo apt-get install instakill</span>
+        const text = `<span class='user'>user@instakill:~$</span> <span class='command'>sudo apt-get install instakill</span>
 <span class='output'>Reading package lists... Done
 Building dependency tree
 Reading state information... Done
@@ -90,24 +90,24 @@ Calculating instakill_members... Done</span>
  ├── <span class='clickable' onclick="window.location.href='your-nostalgia-url.html'">nostalgia.html</span>
  ├── <span class='clickable' onclick="window.location.href='https://www.youtube.com/watch?v=xvFZjo5PgG0'">source_code.zip</span>
  ├── instakill.txt</span>`;
-        
+
         let i = 0;
         function typeOut() {
             if (i < text.length) {
-                document.getElementById("output").innerHTML = text.substring(0, i+3) + '<span class="cursor"></span>';
-                i += 3;
-                let speed = Math.random() * (50 - 20) + 20; 
+                document.getElementById("output").innerHTML = text.substring(0, i+1) + '<span class="cursor"></span>';
+                i++;
+                let speed = Math.random() * (60 - 30) + 30;
                 setTimeout(typeOut, speed);
             } else {
                 document.querySelector(".cursor").remove();
             }
         }
+
         window.onload = typeOut;
-        
+
         document.addEventListener("mousemove", (e) => {
             const ring = document.getElementById("ring");
-            ring.style.left = `${e.clientX}px`;
-            ring.style.top = `${e.clientY}px`;
+            ring.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
         });
 
         document.addEventListener("mouseover", () => {
