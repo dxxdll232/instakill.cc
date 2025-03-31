@@ -32,6 +32,51 @@
             top: 25px;
         }
 
+        #entryOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        #entryWindow {
+            width: 350px;
+            text-align: center;
+        }
+        
+        #entryLogo {
+            margin-bottom: 20px;
+        }
+        
+        #entryLogo pre {
+            color: white;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            line-height: 1.2;
+        }
+        
+        #entryButton {
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        
+        .blink {
+            animation: blink-animation 1s steps(5, start) infinite;
+        }
+        
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
         
         .wrapper {
             display: flex;
@@ -70,25 +115,40 @@
     </style>
 </head>
 <body>
-
-    
+    <div id="overlays" onclick="playMedia()">
+        <div id="overlay-text" class="blink">Click anywhere to enter...</div>
+      </div>
     <div class="ascii">
         <pre>   
-     $$$$$$\ $$\   $$\    $$\  $$$$$$$$\  $$$$$$\  $$\   $$\ $$$$$$\ $$\       $$\       
-     \_$$  _|$$$\  $$ | $$$$$$\\__$$  __|$$  __$$\ $$ | $$  |\_$$  _|$$ |      $$ |      
-       $$ |  $$$$\ $$ |$$  __$$\  $$ |   $$ /  $$ |$$ |$$  /   $$ |  $$ |      $$ |      
-       $$ |  $$ $$\$$ |$$ /  \__| $$ |   $$$$$$$$ |$$$$$  /    $$ |  $$ |      $$ |      
-       $$ |  $$ \$$$$ |\$$$$$$\   $$ |   $$  __$$ |$$  $$<     $$ |  $$ |      $$ |      
-       $$ |  $$ |\$$$ | \___ $$\  $$ |   $$ |  $$ |$$ |\$$\    $$ |  $$ |      $$ |      
-     $$$$$$\ $$ | \$$ |$$\  \$$ | $$ |   $$ |  $$ |$$ | \$$\ $$$$$$\ $$$$$$$$\ $$$$$$$$\ 
-     \______|\__|  \__|\$$$$$$  | \__|   \__|  \__|\__|  \__|\______|\________|\________| 
-                        \_$$  _/                                                          
-\ _/        
-      
+                                _
+                               / \
+                              / .'_
+                             / __| \
+             `.             | / (-' |
+           `.  \_..._       :  (_,-/
+         `-. `,'     `-.   /`-.__,'
+            `/ __       \ /     /
+            /`/  \       :'    /
+          _,\o\_o/       /    /
+         (_) ___.--.    /    /
+          `-. -._.i \.      :
+             `.\  ( |:.     |
+            ,' )`-' |:..   / \
+   __     ,'   |    `.:.      `.
+  (_ `---:     )      \:.       \
+   ,'     `. .'\       \:.       )
+ ,' ,'     ,'  \\ o    |:.      /
+(_,'  ,7  /     \`.__.':..     /,,,
+  (_,'(_,'   _gdMbp,,dp,,,,,,dMMMMMbp,,
+          ,dMMMMMMMMMMMMMMMMMMMMMMMMMMMb,
+       .dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMb,  fsc
+     .dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM,
+    ,MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+   dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.
+ .dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMb       
         </pre>
     </div>
 
-    
     <div class="wrapper">
         <div class="container">
             <div class="content">
@@ -115,8 +175,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div>  
         <div class="container">
             <div class="content">
                 <div class="profcont">
@@ -130,7 +189,7 @@
                             </div>
                         </div>
                         <div class="window-body profbody has-space">
-                            <a href="https://doxbin.com/user/line" target="_blank">
+                            <a href="https://doxbin.com/user/instakiII" target="_blank">
                                 <img src="flank.png" style="height:120px;border-radius:5px;">
                             </a>
                             <h5><strong>Flank</strong></h5>
@@ -143,7 +202,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="content">
                 <div class="profcont">
@@ -172,7 +230,6 @@
         </div>
     </div>
 
-    
     <div class="audwin">
         <div class="audio-controls">
             <p style="font-size:13px;margin-bottom:5px">Now Playing:</p>
@@ -192,14 +249,18 @@
 
     <script>
 
-  <div id="main">
-    <div id="desktop">
-      <br><br>
-      <center>
-        <h4 style="color: #fff">INSTAKILL.CC</h4>
-        <h5 style="color: #fff;">CRIP WALKIN ON YOUR INTERNET PRESENCE</h5>
-        <div class="image-spider"><img src="spider.png"></div>
-      </center>
+      
+      const titles = ['I', 'IN', 'IN$', 'IN$T', 'IN$TA', 'IN$TAK', 'IN$TAKI', 'IN$TAKIL', 'IN$TAKILL', 'IN$TAKILL', 'IN$TAKIL', 'IN$TAKI', 'IN$TAK', 'IN$TA', 'IN$T', 'IN$', 'IN', 'I'];
+      let index = 0;
+
+      function changeTitle() {
+          document.title = titles[index];
+          index = (index + 1) % titles.length;
+          setTimeout(changeTitle, 200); 
+      }
+
+      
+      changeTitle();
         
         function togglePlayPause() {
             var audio = document.getElementById("audio");
@@ -219,7 +280,28 @@
                 playMedia();
             }
         });
+        
+        document.getElementById('entryButton').addEventListener('click', function() {
+            var overlay = document.getElementById('entryOverlay');
+            overlay.style.opacity = '0';
+            overlay.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(function() {
+                overlay.style.display = 'none';
+                
+                var audio = document.getElementById('audio');
+                if (audio) {
+                    var playPauseButton = document.getElementById('playPauseButton');
+                    audio.play();
+                    if (playPauseButton) {
+                        playPauseButton.innerHTML = "<img src='pause.png'>";
+                    }
+                }
+                
+                if (typeof playMedia === 'function') {
+                    playMedia();
+                }
+            }, 500);
+        });
     </script>
-
 </body>
-</html>
