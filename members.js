@@ -2,7 +2,7 @@ const profileDisplay = document.getElementById('profile-display');
 const profilePic = document.getElementById('profile-pic');
 const profileDesc = document.getElementById('profile-desc');
 
-const fontFace = new FontFace('FreeSerif', 'url(../fonts/FreeSerif-YO4a.woff)');
+const fontFace = new FontFace('FreeSerif', 'url(FreeSerif-YO4a.woff)');
 fontFace.load().then(function(loadedFace) {
   document.fonts.add(loadedFace);
   profileDesc.style.fontFamily = 'FreeSerif, serif';
