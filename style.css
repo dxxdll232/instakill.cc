@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'GothicByte';
-  src: url('../fonts/GothicByte.ttf') format('truetype');
+  src: url('GothicByte.ttf') format('truetype');
 }
 
 body {
