@@ -16,11 +16,11 @@ const profiles = {
     desc: 'awesome',
   },
   shy: {
-    img: 'flank.jpeg',
+    img: 'flank.png',
     desc: 'nigger',
   },
   motori: {
-    img: 'dorm.jpg',
+    img: 'dorm.png',
     desc: 'muslim',
   }
 };
