@@ -10,7 +10,7 @@ const closeButton = document.querySelector('.close-button');
 const playerToggle = document.getElementById('player-toggle');
 
 const songs = [
-  'music.mp3',
+  'Bring Me To Life.mp3',
   'Вечная жизнь.mp3',
   'Грезы.mp3',
   'Грустная сука.mp3',
@@ -64,7 +64,7 @@ function shuffleArray(array) {
 
 window.initAudioPlayer = function() {
   playerToggle.style.display = 'block';
-  music.src = 'music.mp3';
+  music.src = 'Bring Me To Life.mp3';
   music.volume = 0.3;
   music.play();
   currentSongIndex = 0;
