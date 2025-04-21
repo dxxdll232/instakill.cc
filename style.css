@@ -257,29 +257,3 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.5);
 }
-
-@keyframes swing {
-  0% { transform: rotate(3deg); }
-  50% { transform: rotate(-3deg); }
-  100% { transform: rotate(3deg); }
-}
-
-.image-spider {
-  position: absolute;
-  top: 25%;
-  left: 48.7%;
-  transform: translate(-50%, -50%);
-  filter: grayscale(1) contrast(100%);
-  max-width: 500px;
-  height: auto;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.image-spider img {
-  width: 750px;
-  height: auto;
-  max-width: 550px;
-  animation: swing 2s infinite ease-in-out;
-  transform-origin: top center;
-}
