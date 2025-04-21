@@ -13,7 +13,7 @@ fontFace.load().then(function(loadedFace) {
 const profiles = {
   cute: {
     img: 'perk.jpeg',
-    desc: 'awesome',
+    desc: 'guap',
   },
   shy: {
     img: 'flank.png',
