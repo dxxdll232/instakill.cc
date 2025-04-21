@@ -95,11 +95,14 @@ body {
 }
 
 #profile-desc {
+  font-family: 'Terminal', monospace !important;
   color: white;
   font-size: 14px;
   max-width: 300px;
   text-align: center;
   padding: 0 10px;
+  line-height: 1.5;
+  margin-top: 5px;
 }
 
 @keyframes fadeIn {
