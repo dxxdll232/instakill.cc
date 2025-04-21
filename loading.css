@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Terminal';
-    src: url('../fonts/FreeSerif-YO4a.woff') format('woff');
+    src: url('FreeSerif-YO4a.woff') format('woff');
 }
 
 :root {
@@ -72,6 +72,7 @@ body {
     border-left: 2px solid var(--primary);
     margin: 5px 0;
     text-shadow: 0 0 5px var(--glow);
+    font-family: 'Terminal', monospace !important;
 }
 
 .boot-log.success::before {
@@ -105,18 +106,31 @@ body {
 
 .memory-block {
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: 2px;
+    width: 8px;
+    height: 8px;
+    margin: 1px;
     background: var(--secondary);
-    animation: memoryTest 0.1s forwards;
+    animation: memoryTest 0.15s ease-in-out forwards;
     opacity: 0;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 @keyframes memoryTest {
-    from { background: var(--secondary); opacity: 0; }
-    to { background: var(--primary); opacity: 0.8; }
+    0% { 
+        background: #ff0000; 
+        opacity: 1;
+        box-shadow: 0 0 3px #ff0000;
+    }
+    50% { 
+        background: #ff9999;
+        opacity: 0.9;
+        box-shadow: 0 0 4px #ff9999;
+    }
+    100% { 
+        background: #ffffff;
+        opacity: 0.8;
+        box-shadow: 0 0 5px #ffffff;
+    }
 }
 
 .progress {
