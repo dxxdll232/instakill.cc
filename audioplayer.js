@@ -13,12 +13,6 @@ const songs = [
   'Bring Me To Life.mp3',
   'Cigarettes out the Window.mp3',
   'I see that town Silent Hill.mp3',
-  'Грустная сука.mp3',
-  'Зеркало.mp3',
-  'Малыш.mp3',
-  'Пламя.mp3',
-  'Разобьюсь.mp3',
-  'Яд.mp3'
 ];
 
 let currentSongIndex = 0;
