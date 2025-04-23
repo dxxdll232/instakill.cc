@@ -11,8 +11,8 @@ const playerToggle = document.getElementById('player-toggle');
 
 const songs = [
   'Bring Me To Life.mp3',
-  'Вечная жизнь.mp3',
-  'Грезы.mp3',
+  'Cigarettes out the Window.mp3',
+  'I see that town Silent Hill.mp3',
   'Грустная сука.mp3',
   'Зеркало.mp3',
   'Малыш.mp3',
