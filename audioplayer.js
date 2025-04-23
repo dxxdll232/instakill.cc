@@ -41,7 +41,7 @@ function updateActiveSong() {
 function playSong(index) {
   currentSongIndex = index;
   const playlist = isShuffled ? shuffledPlaylist : songs;
-  music.src = `media/${playlist[currentSongIndex]}`;
+  music.src = `${playlist[currentSongIndex]}`;
   music.play();
   playBtn.textContent = '⏸';
   updateActiveSong();
