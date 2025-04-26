@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/gif" sizes="64x64" href="monopoly3.gif">
-    <meta property="og:title" content="DEAD$HOT">
-    <title>#deadshot & friend</title>
+    <meta property="og:title" content="DEAD$HOT" />
+    <title>instakill</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
     <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
+    <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
     <style>
         * {
             margin: 0;
@@ -21,9 +22,10 @@
             font-family: 'Pirata One', sans-serif;
             background-color: #0d0d0d;
             color: white;
-            height: 100vh;
-            overflow: hidden;
+            height: 100vh; 
+            overflow: hidden; 
             display: flex;
+            align-items: center;
         }
 
         #enter-overlay {
@@ -37,7 +39,6 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            z-index: 10;
         }
 
         .glitch {
@@ -100,8 +101,8 @@
             height: 100%;
         }
 
-        .left-half, .right-half {
-            width: 50%;
+        .left-half, .center-half, .right-half {
+            width: 33.33%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -110,14 +111,11 @@
             color: white;
             text-align: center;
             position: relative;
+            z-index: 5;
         }
 
-        .left-half {
-            background-color: #0d0d0d;
-        }
-
-        .right-half {
-            background-color: #1a1a1a;
+        .left-half, .center-half, .right-half {
+            background-color: #000000;
         }
 
         .interactive-section {
@@ -153,50 +151,50 @@
     </div>
 
     <div class="container">
-        <div class="left-half">
-            <div class="interactive-section" id="logo-left">
-                <img src="line.png" alt="line" style="display: none;">
+        <!-- Left Section -->
+        <div class="center">
+            <div class="interactive-section" id="logo-center">
+                <img src="tongue.png" alt="obey" style="display: none;">
             </div>
-            <p class="meow glitch"><span class="status-glitch">line</span></p>
+            <p class="meow glitch"><span class="status-glitch">OBEY</span></p>
             <div class="social-links">
-                <p><a href="" target="_blank"></a></p>
-                <p><a href="xmpp:" target="_blank">xmpp:</a></p>
-                <p><a href="" target="_blank"></a></p>
-                <p><a href="mailto:" target="_blank"></a> / <a href="pgp.txt" target="_blank">pgp</a></p>
-                <p><a href="" target="_blank"></a></p>
+                <p><a href="https://t.me/a22cw" target="_blank">t.me/a22cw</a></p>
+                <p><a href="xmpp:obey@creep.im" target="_blank">xmpp:obey@creep.im</a></p>
+                <p><a href="https://discord.com/users/1301271502489915445" target="_blank">@zzzz_c</a></p>
+                <p><a href="" target="_blank"></a>  <a href="obey_pgp.txt" target="_blank">pgp</a></p>
+                <p><a href="https://doxbin.org/user/obey" target="_blank">doxbin:obey</a></p>
             </div>
         </div>
 
-    <div class="container">
+        
         <div class="left-half">
-            <div class="interactive-section" id="logo-left">
-                <img src="tongue.png" alt="line" style="display: none;">
+            <div class="interactive-section" id="logo-center">
+                <img src="leon.png" alt="leon" style="display: none;">
             </div>
-            <p class="meow glitch"><span class="status-glitch">tongue</span></p>
+            <p class="meow glitch"><span class="status-glitch">LEON</span></p>
             <div class="social-links">
-                <p><a href="" target="_blank"></a></p>
-                <p><a href="xmpp:" target="_blank">xmpp:</a></p>
-                <p><a href="" target="_blank"></a></p>
-                <p><a href="mailto:" target="_blank"></a> / <a href="pgp.txt" target="_blank">pgp</a></p>
-                <p><a href="" target="_blank"></a></p>
+                <p><a href="https://t.me/criminal9281" target="_blank">t.me/criminal9281</a></p>
+                <p><a href="xmpp:leon@creep.im" target="_blank">xmpp:leon@creep.im</a></p>
+                <p><a href="https://discord.com/users/1220742473320632396" target="_blank">@sad_user91818</a></p>
+                <p><a href="" target="_blank"></a>  <a href="leon_pgp.txt" target="_blank">pgp</a></p>
+                <p><a href="https://doxbin.org/user/nn" target="_blank">doxbin:nn</a></p>
             </div>
         </div>
 
-    <div class="container">
-        <div class="left-half">
-            <div class="interactive-section" id="logo-left">
-                <img src="ghouls.png" alt="line" style="display: none;">
+     
+        <div class="right-half">
+            <div class="interactive-section" id="logo-right">
+                <img src="tongue.png" alt="tongue" style="display: none;">
             </div>
-            <p class="meow glitch"><span class="status-glitch">ghouls</span></p>
+            <p class="meow glitch"><span class="status-glitch">TONGUE</span></p>
             <div class="social-links">
-                <p><a href="" target="_blank"></a></p>
-                <p><a href="xmpp:" target="_blank">xmpp:</a></p>
-                <p><a href="" target="_blank"></a></p>
-                <p><a href="mailto:" target="_blank"></a> / <a href="pgp.txt" target="_blank">pgp</a></p>
-                <p><a href="" target="_blank"></a></p>
+                <p><a href="https://t.me/rockstar95" target="_blank">t.me/rockstar95</a></p>
+                <p><a href="xmpp:lol@sure.im" target="_blank">xmpp:lol@sure.im</a></p>
+                <p><a href="https://x.com/1894" target="_blank">@1894</a></p>
+                <p><a href="" target="_blank"></a>  <a href="tongue_pgp.txt" target="_blank">pgp</a></p>
             </div>
         </div>
-    </div>
+    </div> 
 
     <audio id="music-player"></audio>
 
@@ -205,6 +203,16 @@
         document.addEventListener("DOMContentLoaded", function() {
             new NextParticle({
                 image: document.querySelector("#logo-left img"),
+                color: "#FFFFFF",
+                maxWidth: 500,
+                maxHeight: 500,
+                particleGap: 2,
+                noise: 15,
+                speed: 0.1,
+            });
+
+            new NextParticle({
+                image: document.querySelector("#logo-center img"),
                 color: "#FFFFFF",
                 maxWidth: 500,
                 maxHeight: 500,
