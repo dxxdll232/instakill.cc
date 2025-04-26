@@ -101,17 +101,18 @@
             height: 100%;
         }
 
-        .left-half, .right-half {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
+.third {
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    background-color: #0d0d0d;
+}
 
         .left-half {
             background-color: #0d0d0d;
@@ -153,61 +154,76 @@
         <div class="glitch">Click to enter</div>
     </div>
 
-    <div class="container">
-        <div class="left-half">
-            <div class="interactive-section" id="logo-left">
-                <img src="monopoly.png" alt="obey" style="display: none;">
-            </div>
-            <p class="meow glitch"><span class="status-glitch">OBEY</span></p>
-            <div class="social-links">
-                <p><a href="https://t.me/deadzhot" target="_blank">t.me/deadzhot</a></p>
-                <p><a href="xmpp:deadshot@anoxinon.me" target="_blank">xmpp:deadshot@anoxinon.me</a></p>
-                <p><a href="https://discord.com/users/1301271502489915445" target="_blank">@zzzz_c</a></p>
-                <p><a href="mailto:im@trolli.ng" target="_blank">im@trolli.ng</a> / <a href="obey_pgp.txt" target="_blank">pgp</a></p>
-                <p><a href="https://doxbin.org/user/obey" target="_blank">doxbin:obey</a></p>
-            </div>
+<div class="container">
+    <div class="third">
+        <!-- First Section -->
+        <div class="interactive-section" id="logo-left">
+            <img src="monopoly.png" alt="obey" style="display: none;">
         </div>
-
-        <div class="right-half">
-            <div class="interactive-section" id="logo-right">
-                <img src="ghouls.png" alt="leon" style="display: none;">
-            </div>
-            <p class="meow glitch"><span class="status-glitch">LEON</span></p>
-            <div class="social-links">
-                <p><a href="https://t.me/criminal9281" target="_blank">t.me/criminal9281</a></p>
-                <p><a href="xmpp:friend@anoxinon.me" target="_blank">xmpp:cum@anoxinon.me</a></p>
-                <p><a href="https://discord.com/users/1220742473320632396" target="_blank">@sad_user91818</a></p>
-                <p><a href="mailto:love@defton.es" target="_blank">love@defton.es</a> / <a href="leon_pgp.txt" target="_blank">pgp</a></p>
-                <p><a href="https://doxbin.org/user/nn" target="_blank">doxbin:nn</a></p>
-            </div>
+        <p class="meow glitch"><span class="status-glitch">OBEY</span></p>
+        <div class="social-links">
+            <!-- your links here -->
         </div>
     </div>
+
+    <div class="third">
+        <!-- Second Section -->
+        <div class="interactive-section" id="logo-middle">
+            <img src="middle.png" alt="middle" style="display: none;">
+        </div>
+        <p class="meow glitch"><span class="status-glitch">MIDDLE</span></p>
+        <div class="social-links">
+            <!-- your links here -->
+        </div>
+    </div>
+
+    <div class="third">
+        <!-- Third Section -->
+        <div class="interactive-section" id="logo-right">
+            <img src="ghouls.png" alt="leon" style="display: none;">
+        </div>
+        <p class="meow glitch"><span class="status-glitch">LEON</span></p>
+        <div class="social-links">
+            <!-- your links here -->
+        </div>
+    </div>
+</div>
 
     <audio id="music-player"></audio>
 
     <script src="music.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            new NextParticle({
-                image: document.querySelector("#logo-left img"),
-                color: "#FFFFFF",
-                maxWidth: 500,
-                maxHeight: 500,
-                particleGap: 2,
-                noise: 15,
-                speed: 0.1,
-            });
+document.addEventListener("DOMContentLoaded", function() {
+    new NextParticle({
+        image: document.querySelector("#logo-left img"),
+        color: "#FFFFFF",
+        maxWidth: 500,
+        maxHeight: 500,
+        particleGap: 2,
+        noise: 15,
+        speed: 0.1,
+    });
 
-            new NextParticle({
-                image: document.querySelector("#logo-right img"),
-                color: "#FFFFFF",
-                maxWidth: 500,
-                maxHeight: 500,
-                particleGap: 2,
-                noise: 15,
-                speed: 0.1,
-            });
-        });
+    new NextParticle({
+        image: document.querySelector("#logo-middle img"),
+        color: "#FFFFFF",
+        maxWidth: 500,
+        maxHeight: 500,
+        particleGap: 2,
+        noise: 15,
+        speed: 0.1,
+    });
+
+    new NextParticle({
+        image: document.querySelector("#logo-right img"),
+        color: "#FFFFFF",
+        maxWidth: 500,
+        maxHeight: 500,
+        particleGap: 2,
+        noise: 15,
+        speed: 0.1,
+    });
+});
     </script>
 </body>
 </html>
