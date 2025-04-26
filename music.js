@@ -23,15 +23,6 @@ function toggleMusic() {
     }
 }
 
-document.body.addEventListener("click", (e) => {
-    e.preventDefault();
-    toggleMusic();
-});
-document.body.addEventListener("touchstart", (e) => {
-    e.preventDefault();
-    toggleMusic();
-});
-
 music.addEventListener("ended", () => {
     let nextTrack;
     do {
