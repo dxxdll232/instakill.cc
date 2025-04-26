@@ -1,9 +1,9 @@
 const audioFiles = [
-//    { src: "https://files.catbox.moe/fo805m.mp3"}, 
-//    { src: "https://files.catbox.moe/vlohr2.mp3"},
-//    { src: "https://files.catbox.moe/ebvch3.mp3"},
-//    { src: "https://files.catbox.moe/xo4vuv.mp3"}, 
-    { src: "https://files.catbox.moe/cqawfd.mp3"},
+    { src: "https://files.catbox.moe/cqawfd.mp3" }, 
+    { src: "https://files.catbox.moe/cqawfd.mp3" },
+    { src: "https://files.catbox.moe/cqawfd.mp3" },
+    { src: "https://files.catbox.moe/cqawfd.mp3" }, 
+    { src: "https://files.catbox.moe/cqawfd.mp3" },
 ];
 
 let currentTrack = Math.floor(Math.random() * audioFiles.length);
@@ -15,7 +15,7 @@ function toggleMusic() {
     if (music.paused) {
         music.play()
             .then(() => {
-                console.log(Now playing: ${audioFiles[currentTrack].artist} - ${audioFiles[currentTrack].song});
+                console.log(`Now playing track ${currentTrack}`);
             })
             .catch(error => console.error("Playback failed:", error));
     } else {
@@ -42,7 +42,7 @@ music.addEventListener("ended", () => {
     music.src = audioFiles[currentTrack].src;
     music.play()
         .then(() => {
-            console.log(Now playing: ${audioFiles[currentTrack].artist} - ${audioFiles[currentTrack].song});
+            console.log(`Now playing track ${currentTrack}`);
         })
         .catch(error => console.error("Playback failed:", error));
 });
