@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +12,13 @@
       <img src="lobotomy.jpg" alt="Lobotomy" class="user-avatar" />
       <span class="username">Lobotomy</span>
     </div>
+
+    <!-- 🔧 MODIFIED: Added id="github-img" -->
     <div class="user" onclick="togglePopup(event, this, 'GitHub', 'github.png')">
-      <img src="github.png" alt="GitHub" class="user-avatar" />
+      <img src="github.png" alt="GitHub" class="user-avatar" id="github-img" />
       <span class="username">GitHub</span>
     </div>
+
     <div class="user" onclick="togglePopup(event, this, 'Anti', 'anti.png')">
       <img src="/static/img/anti.png" alt="Anti" class="user-avatar" />
       <span class="username">Anti</span>
@@ -30,9 +32,11 @@
       <span class="username">Anon</span>
     </div>
   </div>
+
   <div class="spider">
     <img src="spider.png" alt="Spider" />
   </div>
+
   <div class="taskbar">
     <div class="taskbar-icon" onclick="showTerminal()" role="button" aria-label="Open terminal">
       <svg role="img" aria-label="Terminal icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,9 +46,10 @@
     <div class="taskbar-separator"></div>
     <div class="taskbar-time" id="time-display"></div>
   </div>
+
   <div class="terminal-popup terminal-crt" id="terminal" aria-hidden="true" role="dialog" aria-label="Terminal window">
     <div class="terminal-header">
-      <div class="terminal-title"><a>terminal@instakill.cc</a></a></div>
+      <div class="terminal-title"><a>terminal@instakill.cc</a></div>
       <button class="terminal-close" onclick="hideTerminal()" aria-label="Close terminal">✕</button>
     </div>
     <div class="terminal-body">
@@ -53,6 +58,7 @@
     </div>
     <div class="terminal-scanlines"></div>
   </div>
+
   <div class="popup popup-crt" id="user-popup" aria-hidden="true" role="dialog" aria-label="User info popup">
     <div class="popup-header">
       <div class="popup-title" id="popup-username"></div>
@@ -61,10 +67,44 @@
     <div class="popup-content" id="popup-content"></div>
     <div class="popup-scanlines"></div>
   </div>
+
+  <!-- 🎧 Existing startup sound -->
   <audio id="startup-sound" preload="auto">
     <source src="audio.mp3" type="audio/mpeg" />
   </audio>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="audio.js"></script>
+
+  <!-- 🔊 NEW: Mouse click sound -->
+  <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+
+  <!-- Scripts -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="audio.js"></script>
   <script src="desktop.js"></script>
+
+  <!-- ✅ NEW: GitHub double-click script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const githubImg = document.getElementById("github-img");
+      const clickSound = document.getElementById("click-sound");
+
+      if (githubImg) {
+        githubImg.addEventListener("dblclick", function (event) {
+          // Prevent conflict with single-click togglePopup
+          event.stopPropagation();
+
+          // Play the click sound
+          if (clickSound) {
+            clickSound.currentTime = 0;
+            clickSound.play();
+          }
+
+          // Redirect after slight delay to let the sound play
+          setTimeout(() => {
+            window.location.href = "https://github.com/lobotomy";
+          }, 150); // Adjust delay as needed
+        });
+      }
+    });
+  </script>
 </body>
 </html>
