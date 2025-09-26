@@ -120,12 +120,10 @@
   <div class="kali-overlay" id="kali-overlay">
     <div class="kali-terminal">
       <div class="kali-terminal-header">
-        <span>user@lobotomy: ~</span>
+        <span>kali@localhost: ~</span>
         <span class="kali-close-btn" onclick="hideKaliTerminal()">X</span>
       </div>
-      <div class="kali-terminal-body" id="kali-terminal-text">
-nigger
-      </div>
+      <div class="kali-terminal-body" id="kali-terminal-text"></div>
     </div>
   </div>
 
@@ -135,8 +133,22 @@ nigger
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="audio.js"></script>
   <script src="desktop.js"></script>
   <script>
+    const kaliText = "Welcome to Kali Linux\\nType 'help' to get started.";
+    let typingIndex = 0;
+
+    function typeWriter() {
+      if (typingIndex < kaliText.length) {
+        document.getElementById("kali-terminal-text").innerHTML += kaliText.charAt(typingIndex);
+        typingIndex++;
+        setTimeout(typeWriter, 50); // typing speed in ms
+      }
+    }
+
     function showKaliTerminal() {
       document.getElementById("kali-overlay").style.display = "flex";
+      document.getElementById("kali-terminal-text").innerHTML = "";
+      typingIndex = 0;
+      typeWriter();
     }
     function hideKaliTerminal() {
       document.getElementById("kali-overlay").style.display = "none";
