@@ -47,38 +47,66 @@ function showTerminal() {
   setTimeout(typeWriter, 300);
 }
 
+function getDeviceInfo() {
+  const info = [];
+
+  info.push({ text: `User Agent: ${navigator.userAgent}`, color: "#FF4500" });
+  info.push({ text: `Platform: ${navigator.platform}`, color: "#FF8C00" });
+  info.push({ text: `Screen: ${window.screen.width}x${window.screen.height}`, color: "#FFA500" });
+
+  if (navigator.deviceMemory) {
+    info.push({ text: `RAM: ${navigator.deviceMemory} GB`, color: "#FF6347" });
+  }
+
+  info.push({ text: `Touch Support: ${'ontouchstart' in window}`, color: "#FF8C00" });
+
+  try {
+    const canvas = document.createElement("canvas");
+    const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+    if (debugInfo) {
+      const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+      info.push({ text: `GPU: ${renderer}`, color: "#FF4500" });
+    }
+  } catch (e) {
+    info.push({ text: "GPU: Unknown", color: "#FF4500" });
+  }
+
+  return info;
+}
+
 function showAsciiAndInfo() {
   const terminalAscii = document.getElementById('terminal-ascii');
   const terminalInfo = document.getElementById('terminal-info');
 
   const asciiGirl = [
  "                 .---. ",
- "                /  0  \ ",
+ "                /  0  \\ ",
  "                |  =  | ",
  "                | === | ",
  "           .---.| %*% |.---. ", 
- "          /  0  | %*% |  0  \ ",
+ "          /  0  | %*% |  0  \\ ",
  "          | === |  =  | === | ",
  "          | %*% |  0  | %*% | ",
  "          | %*% |  =  | %*% | ",
  "          | === | === | === | ",
  "   ___    |  0  | %*% |  0  |    ___ ", 
  ".-'   '-. | *** | === | *** | .-'   '-. ",
-"/  &&&&&  \| @#@ |  =  | @#@ |/  &&&&&  \ ",
-"-_.. ~~~~  | *** |  0  | *** |  ~~~~ .._- ",
-"    '. %%%    0     _     0    %%% .' ",
-"      \          __/ \__          / ", 
-"       | %&%&%&  \     /  &%&%&% | ",
-"       | ******  /_   _\  ****** | ", 
-"       | &%&%&%    \_/    %&%&%& | ",
-"       |          ~ ~ ~          | ",
-"       |       ..-------..       | ",
-"       | %  .''   /   \   ''.  % | ",
-"       | % '.    {     }    .' % | ",
-"       | &%  ''.._\   /_..''  %& | ",
-"        \ %&%&    '''''    &%&% / ",
-"         '-. &%&%&%&%&%&%&%& .-' ",
-"           ''-............-'' ",
+ "/  &&&&&  \\| @#@ |  =  | @#@ |/  &&&&&  \\ ",
+ "-_.. ~~~~  | *** |  0  | *** |  ~~~~ .._- ",
+ "    '. %%%    0     _     0    %%% .' ",
+ "      \\          __/ \\__          / ", 
+ "       | %&%&%&  \\     /  &%&%&% | ",
+ "       | ******  /_   _\\  ****** | ", 
+ "       | &%&%&%    \\_/    %&%&%& | ",
+ "       |          ~ ~ ~          | ",
+ "       |       ..-------..       | ",
+ "       | %  .''   /   \\   ''.  % | ",
+ "       | % '.    {     }    .' % | ",
+ "       | &%  ''.._\\   /_..''  %& | ",
+ "        \\ %&%&    '''''    &%&% / ",
+ "         '-. &%&%&%&%&%&%&%& .-' ",
+ "           ''-............-'' ",
   ];
 
   const asciiContainer = document.createElement('div');
@@ -104,29 +132,32 @@ function showAsciiAndInfo() {
     asciiContainer.style.opacity = '1';
   }, 100);
 
-  const infoHTML = `
-    <div style="margin: auto; opacity: 0; transition: opacity 1s ease-in;">
-      <div class="info-item" style="--delay: 1; color: #FF4500">user@lobotomy</div>
-      <div class="info-item" style="--delay: 2; color: #FF8C00">-----------------</div>
-      <div class="info-item" style="--delay: 3; color: #FFA500">"we love to see it"</div>
-      <div class="info-item" style="--delay: 4; color: #FF8C00">GitHub: https://github.com/lobotomy</div>
-      <div class="info-item" style="--delay: 5; color: #FF6347">Discord: @lobotomy.alt | 1421127819697721355</div>
-      <div class="info-item" style="--delay: 6; color: #FF4500"></div>
-      <div class="info-item" style="--delay: 7; color: #FF8C00"></div>
-    </div>
-  `;
-  
-  terminalInfo.innerHTML = infoHTML;
-  
+  // Dynamic Device Info
+  const infoData = getDeviceInfo();
+  const infoContainer = document.createElement("div");
+  infoContainer.style.margin = "auto";
+  infoContainer.style.opacity = "0";
+  infoContainer.style.transition = "opacity 1s ease-in";
+
+  infoData.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.className = "info-item";
+    div.style.setProperty("--delay", index + 1);
+    div.style.color = item.color;
+    div.textContent = item.text;
+    infoContainer.appendChild(div);
+  });
+
+  terminalInfo.appendChild(infoContainer);
+
   setTimeout(() => {
-    const infoContainer = terminalInfo.querySelector('div');
-    infoContainer.style.opacity = '1';
-    
-    const items = document.querySelectorAll('.info-item');
+    infoContainer.style.opacity = "1";
+    const items = infoContainer.querySelectorAll(".info-item");
     items.forEach((item, index) => {
+      item.style.opacity = "0";
       setTimeout(() => {
-        item.style.opacity = '1';
-      }, index * 100);
+        item.style.opacity = "1";
+      }, index * 200);
     });
   }, 500);
 }
