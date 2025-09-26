@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="desktop.css">
+  <title>instakill.cc</title>
+</head>
+<body class="crt">
+  <div class="user-panel">
+    <div class="user" onclick="togglePopup(event, this, 'Fury', 'Fury.png')">
+      <img src="Fury.png" alt="Fury" class="user-avatar" />
+      <span class="username">Fury</span>
+    </div>
+    <div class="user" onclick="togglePopup(event, this, 'GalaxyArts', 'Galaxy.png')">
+      <img src="Galaxy.png" alt="GalaxyArts" class="user-avatar" />
+      <span class="username">GalaxyArts</span>
+    </div>
+    <div class="user" onclick="togglePopup(event, this, 'Anti', 'anti.png')">
+      <img src="/static/img/anti.png" alt="Anti" class="user-avatar" />
+      <span class="username">Anti</span>
+    </div>
+    <div class="user" onclick="togglePopup(event, this, 'Screwed', 'screwed.png')">
+      <img src="screwed.png" alt="Screwed" class="user-avatar" />
+      <span class="username">Screwed</span>
+    </div>
+    <div class="user" onclick="togglePopup(event, this, 'Anon', '/static/img/anon.png')">
+      <img src="anon.png" alt="Anon" class="user-avatar" />
+      <span class="username">Anon</span>
+    </div>
+  </div>
+  <div class="spider">
+    <div class="spider-title">INSTAKILL.CC</div>
+    <div class="spider-moto">"crip walkin on your internet presence"</div>
+    <img src="spider.png" alt="Spider" />
+  </div>
+  <div class="taskbar">
+    <div class="taskbar-icon" onclick="showTerminal()" role="button" aria-label="Open terminal">
+      <svg role="img" aria-label="Terminal icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 17L10 11L4 5M12 19H20" stroke="#e0e0e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="taskbar-separator"></div>
+    <div class="taskbar-time" id="time-display"></div>
+  </div>
+  <div class="terminal-popup terminal-crt" id="terminal" aria-hidden="true" role="dialog" aria-label="Terminal window">
+    <div class="terminal-header">
+      <div class="terminal-title"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4a0b1a6b9bdbab5b894a3bdb0bba3faa7bc">[email&#160;protected]</a></div>
+      <button class="terminal-close" onclick="hideTerminal()" aria-label="Close terminal">✕</button>
+    </div>
+    <div class="terminal-body">
+      <div class="terminal-ascii" id="terminal-ascii"></div>
+      <div class="terminal-info" id="terminal-info"></div>
+    </div>
+    <div class="terminal-scanlines"></div>
+  </div>
+  <div class="popup popup-crt" id="user-popup" aria-hidden="true" role="dialog" aria-label="User info popup">
+    <div class="popup-header">
+      <div class="popup-title" id="popup-username"></div>
+      <button class="popup-close" onclick="hidePopup()" aria-label="Close popup">✕</button>
+    </div>
+    <div class="popup-content" id="popup-content"></div>
+    <div class="popup-scanlines"></div>
+  </div>
+  <audio id="startup-sound" preload="auto">
+    <source src="audio.mp3" type="audio/mpeg" />
+  </audio>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="audio.js"></script>
+  <script src="desktop.js"></script>
+</body>
+</html>
