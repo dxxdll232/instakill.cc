@@ -25,10 +25,10 @@ const command = "sudo apt install instakill.cc";
   }
 
   const installLines = [
-    { prefix: 'Installing ', user: 'terminal' },
-    { prefix: 'Installing ', user: 'icons' },
-    { prefix: 'Installing ', user: 'users' },
-    { prefix: 'Installing ', user: 'lobotomy loader' },
+    { prefix: 'Installing ', user: 'opsec' },
+    { prefix: 'Installing ', user: 'braincells' },
+    { prefix: 'Installing ', user: 'headache' },
+    { prefix: 'Installing ', user: 'lobotomy' },
   ];
 
   async function typeColoredLine(container, prefix, user) {
