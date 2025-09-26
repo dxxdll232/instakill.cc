@@ -21,6 +21,10 @@
     }
 
     .kali-terminal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background: #1c1c1c;
       border: 2px solid #3b82f6;
       border-radius: 6px;
@@ -31,6 +35,7 @@
       display: flex;
       flex-direction: column;
       animation: fadeIn 0.3s ease-in-out;
+      cursor: default;
     }
 
     .kali-terminal-header {
@@ -41,6 +46,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      cursor: move;
+      user-select: none;
     }
 
     .kali-terminal-body {
@@ -118,9 +125,9 @@
 
   <!-- Kali Linux style terminal overlay -->
   <div class="kali-overlay" id="kali-overlay">
-    <div class="kali-terminal">
-      <div class="kali-terminal-header">
-        <span>user@lobotomy: ~</span>
+    <div class="kali-terminal" id="kali-terminal">
+      <div class="kali-terminal-header" id="kali-drag-header">
+        <span>kali@localhost: ~</span>
         <span class="kali-close-btn" onclick="hideKaliTerminal()">X</span>
       </div>
       <div class="kali-terminal-body" id="kali-terminal-text"></div>
@@ -130,10 +137,10 @@
   <audio id="startup-sound" preload="auto">
     <source src="audio.mp3" type="audio/mpeg" />
   </audio>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="audio.js"></script>
-  <script src="desktop.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/static/js/audio.js"></script>
+  <script src="/static/js/desktop.js"></script>
   <script>
-    const kaliText = "we love to see it";
+    const kaliText = "Welcome to Kali Linux\\nType 'help' to get started.";
     let typingIndex = 0;
 
     function typeWriter() {
@@ -152,6 +159,40 @@
     }
     function hideKaliTerminal() {
       document.getElementById("kali-overlay").style.display = "none";
+    }
+
+    // Drag functionality for Kali Terminal
+    dragElement(document.getElementById("kali-terminal"), document.getElementById("kali-drag-header"));
+
+    function dragElement(elmnt, dragHeader) {
+      let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      dragHeader.onmousedown = dragMouseDown;
+
+      function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        elmnt.style.transform = "translate(0,0)"; // cancel centering transform
+      }
+
+      function closeDragElement() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
     }
   </script>
 </body>
