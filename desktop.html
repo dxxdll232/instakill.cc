@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="desktop.css">
   <title>instakill.cc</title>
   <style>
-    /* Kali-style terminal */
+    /* Unified Kali-style terminal */
     .kali-overlay {
       display: none;
       position: fixed;
@@ -74,7 +74,7 @@
 </head>
 <body class="crt">
   <div class="user-panel">
-    <div class="user" onclick="showKaliTerminal()">
+    <div class="user" onclick="showWeLoveTerminal()">
       <img src="lobotomy.jpg" alt="Lobotomy" class="user-avatar" />
       <span class="username">Lobotomy</span>
     </div>
@@ -91,11 +91,13 @@
       <span class="username">Discord</span>
     </div>
   </div>
+
   <div class="spider">
     <img src="spider.png" alt="Spider" />
   </div>
+
   <div class="taskbar">
-    <div class="taskbar-icon" onclick="showTerminal()" role="button" aria-label="Open terminal">
+    <div class="taskbar-icon" onclick="showNeofetchTerminal()" role="button" aria-label="Open terminal">
       <svg role="img" aria-label="Terminal icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M4 17L10 11L4 5M12 19H20" stroke="#e0e0e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -103,17 +105,18 @@
     <div class="taskbar-separator"></div>
     <div class="taskbar-time" id="time-display"></div>
   </div>
-  <div class="terminal-popup terminal-crt" id="terminal" aria-hidden="true" role="dialog" aria-label="Terminal window">
-    <div class="terminal-header">
-      <div class="terminal-title"><a>terminal@instakill.cc</a></div>
-      <button class="terminal-close" onclick="hideTerminal()" aria-label="Close terminal">✕</button>
+
+  <!-- Unified terminal popup -->
+  <div class="kali-overlay" id="kali-overlay">
+    <div class="kali-terminal" id="kali-terminal">
+      <div class="kali-terminal-header" id="kali-drag-header">
+        <span>terminal@instakill.cc</span>
+        <span class="kali-close-btn" onclick="hideKaliTerminal()">✕</span>
+      </div>
+      <div class="kali-terminal-body" id="kali-terminal-text"></div>
     </div>
-    <div class="terminal-body">
-      <div class="terminal-ascii" id="terminal-ascii"></div>
-      <div class="terminal-info" id="terminal-info"></div>
-    </div>
-    <div class="terminal-scanlines"></div>
   </div>
+
   <div class="popup popup-crt" id="user-popup" aria-hidden="true" role="dialog" aria-label="User info popup">
     <div class="popup-header">
       <div class="popup-title" id="popup-username"></div>
@@ -123,77 +126,11 @@
     <div class="popup-scanlines"></div>
   </div>
 
-  <!-- Kali Linux style terminal overlay -->
-  <div class="kali-overlay" id="kali-overlay">
-    <div class="kali-terminal" id="kali-terminal">
-      <div class="kali-terminal-header" id="kali-drag-header">
-        <span>user@lobotomy: ~</span>
-        <span class="kali-close-btn" onclick="hideKaliTerminal()">X</span>
-      </div>
-      <div class="kali-terminal-body" id="kali-terminal-text"></div>
-    </div>
-  </div>
-
   <audio id="startup-sound" preload="auto">
     <source src="audio.mp3" type="audio/mpeg" />
   </audio>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="audio.js"></script>
+  
+  <script src="audio.js"></script>
   <script src="desktop.js"></script>
-  <script>
-    const kaliText = "we love to see it";
-    let typingIndex = 0;
-
-    function typeWriter() {
-      if (typingIndex < kaliText.length) {
-        document.getElementById("kali-terminal-text").innerHTML += kaliText.charAt(typingIndex);
-        typingIndex++;
-        setTimeout(typeWriter, 150); // typing speed in ms
-      }
-    }
-
-    function showKaliTerminal() {
-      document.getElementById("kali-overlay").style.display = "flex";
-      document.getElementById("kali-terminal-text").innerHTML = "";
-      typingIndex = 0;
-      typeWriter();
-    }
-    function hideKaliTerminal() {
-      document.getElementById("kali-overlay").style.display = "none";
-    }
-
-    // Drag functionality for Kali Terminal
-    dragElement(document.getElementById("kali-terminal"), document.getElementById("kali-drag-header"));
-
-    function dragElement(elmnt, dragHeader) {
-      let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-      dragHeader.onmousedown = dragMouseDown;
-
-      function dragMouseDown(e) {
-        e = e || window.event;
-        e.preventDefault();
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
-        document.onmousemove = elementDrag;
-      }
-
-      function elementDrag(e) {
-        e = e || window.event;
-        e.preventDefault();
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-        elmnt.style.transform = "translate(0,0)"; // cancel centering transform
-      }
-
-      function closeDragElement() {
-        document.onmouseup = null;
-        document.onmousemove = null;
-      }
-    }
-  </script>
 </body>
 </html>
