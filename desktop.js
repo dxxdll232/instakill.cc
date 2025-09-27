@@ -220,21 +220,21 @@ function createKaliWindow(title, content, isError = false) {
 }
 
 function spawnGenerator() {
-  createKaliWindow("C:\\Generator", "Step 1: enter your name<br>C:\\User\\Generator.exe>");
+  createKaliWindow("C:\\Generator", "Strange<br>C:\\User\\Generator.exe>");
 }
 
 function spawnConsole() {
-  createKaliWindow("C:\\Console", "fake everything<br>C:\\User>");
+  createKaliWindow("C:\\Console", "Strange<br>C:\\User>");
 }
 
 function spawnImage(src) {
-  createKaliWindow("C:\\Image_1", `<img src="${src}" style="max-width:100%;border:2px solid #3b82f6;">`);
+  createKaliWindow("C:\\Strange", `<img src="${src}" style="max-width:100%;border:2px solid #3b82f6;">`);
 }
 
 function spawnError() {
   createKaliWindow(
     "C:\\Error",
-    "Stay Strange<br><button onclick='this.closest(\".kali-window\").remove()'>OK</button>",
+    "Strange<br><button onclick='this.closest(\".kali-window\").remove()'>OK</button>",
     true
   );
 }
