@@ -153,7 +153,7 @@ function renderNeofetch() {
                                                               "  .dNNNNNNNKodKOccdll0NNX0O00000kxkkxockNNNNNNNNNNNNNNNNNNXXK0OkddOd;coollooollk0KXdloooolcooodllocloo        ",                                                                                       
                                                              "   ;KNNNNNNN0oxKkclocxXNNX0O00O0kodxko:xNNNNNNNNNNNNNNNNXXKK00kxxkO0o,coolcooollk00XOlooooollooolcoocoo      ",                                                                                                
                                                               "  oNNNNNXXKdoOKxcoloKNNNX0OOO0OolxkdcoXNNNNNNNNNNNXXXKK000OxxxkO00O;'llooclooolk0OXKocdooooclodlclollo    ",                                                                                                  
-                                                              " .xNNXXK00klx00dcolkNNNNX0O0O0kodkxdlkNNNNNNNNNNXKKK000OOxddO00OO0x..lloollooolxKOKNxcooooolcodo:cdlco  ",
+                                                              " .xNNXXK00klx00dcolkNNNNX0O0O0kodkxdlkNNNNNNNNNNXKKK000OOxddO00OO0x..lloollooolxKOKNxcooooolcodo:cdlco  "
   ];
 
   const container = document.createElement("div");
