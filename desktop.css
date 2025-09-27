@@ -304,3 +304,62 @@ body {
     font-family: 'VCR OSD Mono', monospace;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
+
+/* Kali-style floating windows */
+.kali-window {
+  position: absolute;
+  background: #0a0a0a;
+  border: 2px solid #3b82f6;
+  border-radius: 6px;
+  box-shadow: 0 0 15px #3b82f6;
+  min-width: 200px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.kali-window-header {
+  background: #0f172a;
+  padding: 5px 10px;
+  color: #3b82f6;
+  font-family: monospace;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  user-select: none;
+}
+
+.kali-window-body {
+  padding: 10px;
+  color: #00ff9c;
+  font-family: monospace;
+  font-size: 14px;
+  background: #000;
+  flex: 1;
+  overflow: auto;
+}
+
+.kali-window-close {
+  cursor: pointer;
+  color: #ef4444;
+  font-weight: bold;
+}
+
+/* Error popup style */
+.kali-error {
+  border-color: #ef4444;
+  box-shadow: 0 0 15px #ef4444;
+}
+
+.kali-error .kali-window-header {
+  color: #ef4444;
+}
+
+.kali-error .kali-window-body {
+  color: #ef4444;
+  text-align: center;
+}
