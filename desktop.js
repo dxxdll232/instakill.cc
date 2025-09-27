@@ -24,7 +24,7 @@ function showNeofetchTerminal() {
 function showWeLoveTerminal() {
   overlay.style.display = "flex";
   terminalText.innerHTML = "";
-  typeCommand('"', () => {
+  typeCommand('', () => {
     typeOutput("we love to see it");
   });
 }
