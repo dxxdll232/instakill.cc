@@ -190,3 +190,70 @@ function showUserPopup(username, avatar, content) {
 function hidePopup() {
   document.getElementById('user-popup').style.display = 'none';
 }
+
+// --- Floating windows ---
+const windowsContainer = document.getElementById("windows-container");
+let windowCount = 0;
+
+function createKaliWindow(title, content, isError = false) {
+  const win = document.createElement("div");
+  win.className = "kali-window" + (isError ? " kali-error" : "");
+  win.style.top = `${100 + Math.random() * 200}px`;
+  win.style.left = `${100 + Math.random() * 400}px`;
+  win.style.zIndex = 2000 + windowCount;
+
+  const header = document.createElement("div");
+  header.className = "kali-window-header";
+  header.innerHTML = `<span>${title}</span>`;
+  const closeBtn = document.createElement("span");
+  closeBtn.className = "kali-window-close";
+  closeBtn.textContent = "✕";
+  closeBtn.onclick = () => win.remove();
+  header.appendChild(closeBtn);
+
+  const body = document.createElement("div");
+  body.className = "kali-window-body";
+  body.innerHTML = content;
+
+  win.appendChild(header);
+  win.appendChild(body);
+  windowsContainer.appendChild(win);
+
+  dragElement(win, header);
+
+  windowCount++;
+  return win;
+}
+
+function spawnGenerator() {
+  createKaliWindow("C:\\Generator", "Step 1: enter your name<br>C:\\User\\Generator.exe>");
+}
+
+function spawnConsole() {
+  createKaliWindow("C:\\Console", "fake everything<br>C:\\User>");
+}
+
+function spawnImage(src) {
+  createKaliWindow("C:\\Image_1", `<img src="${src}" style="max-width:100%;border:2px solid #3b82f6;">`);
+}
+
+function spawnError() {
+  createKaliWindow(
+    "C:\\Error",
+    "Stay Strange<br><button onclick='this.closest(\".kali-window\").remove()'>OK</button>",
+    true
+  );
+}
+
+// --- Auto-spawn windows like FakeEverything ---
+window.onload = function() {
+  spawnGenerator();
+  spawnConsole();
+  spawnImage("lobotomy.jpg"); // change to your actual image path
+
+  for (let i = 0; i < 6; i++) {
+    setTimeout(() => {
+      spawnError();
+    }, i * 500);
+  }
+};
