@@ -124,8 +124,8 @@ function renderNeofetch() {
 
   const info = getDeviceInfo();
   infoContainer.innerHTML = `
-    <div style="color:#0ff;">user@lobotomy</div>
-    <div style="color:#0ff;">-----------------</div>
+    <div style="color:#0ff;"></div>
+    <div style="color:#0ff;"></div>
     ${info.map(line => `<div>${line}</div>`).join("")}
   `;
 
