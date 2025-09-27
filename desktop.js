@@ -22,8 +22,8 @@ function showNeofetchTerminal() {
 function showWeLoveTerminal() {
   overlay.style.display = "flex";
   terminalText.innerHTML = "";
-  typeCommand('echo "we love to see it"', () => {
-    typeOutput("we love to see it\n");
+  typeCommand('', () => {
+    typeOutput("we love to see it");
   });
 }
 
