@@ -80,14 +80,13 @@ function showAsciiAndInfo() {
   const terminalInfo = document.getElementById('terminal-info');
 
   const asciiKali = [
-"        ▄▄▄▄▄",
-"       ███████",
-"       ▀█████▀",
-"        ▄████▄",
-"     ▄███▀▀▀███▄",
-"   ▄███▀     ▀███▄",
-" ▄███▀         ▀███▄",
-"▄███▀           ▀███▄",
+"        .--.  ",
+"       |o_o | ",
+"       |:_/ | ",
+"      //   \\ \\ ",
+"     (|     | )",
+"    /'\\_   _/`\\",
+"    \\___)=(___/"
   ];
 
   const asciiContainer = document.createElement('div');
