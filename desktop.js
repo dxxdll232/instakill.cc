@@ -37,7 +37,7 @@ function hideKaliTerminal() {
 function typeCommand(cmd, callback) {
   let i = 0;
   const line = document.createElement("div");
-  line.innerHTML = `<span class="prompt">└─$ </span><span id="typing-cmd"></span>`;
+  line.innerHTML = `<span class="prompt"> </span><span id="typing-cmd"></span>`;
   terminalText.appendChild(line);
 
   function typeWriter() {
