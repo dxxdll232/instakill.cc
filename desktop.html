@@ -1,1 +1,149 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> <link rel="stylesheet" href="desktop.css"> <title>instakill.cc</title> <style> /* Unified Kali-style terminal */ .kali-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); justify-content: center; align-items: center; z-index: 9999; } .kali-terminal { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #1c1c1c; border: 2px solid #3b82f6; border-radius: 6px; width: 600px; max-width: 90%; box-shadow: 0 0 20px #3b82f6; overflow: hidden; display: flex; flex-direction: column; animation: fadeIn 0.3s ease-in-out; cursor: default; } .kali-terminal-header { background: #0f172a; padding: 5px 10px; color: #3b82f6; font-family: monospace; display: flex; justify-content: space-between; align-items: center; cursor: move; user-select: none; } .kali-terminal-body { background: #000; color: #00ff9c; padding: 15px; font-family: monospace; font-size: 14px; white-space: pre-wrap; min-height: 200px; } .kali-close-btn { cursor: pointer; color: #ef4444; font-weight: bold; } @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } } </style> </head> <body class="crt"> <div class="user-panel"> <div class="user" onclick="showWeLoveTerminal()"> <img src="lobotomy.jpg" alt="Lobotomy" class="user-avatar" /> <span class="username">Lobotomy</span> </div> <div class="user" onclick="togglePopup(event, this, 'GitHub', 'github.png')"> <img src="github.png" alt="GitHub" class="user-avatar" onclick="window.open('https://github.com/lobot0my', '_blank')" /> <span class="username">GitHub</span> </div> <div class="user" onclick="togglePopup(event, this, 'Telegram', 'telegram.png')"> <img src="telegram.png" alt="Telegram" class="user-avatar" onclick="window.open('https://t.me/Iobot0my', '_blank')" /> <span class="username">Telegram</span> </div> <div class="user" onclick="togglePopup(event, this, 'Discord', 'discord.png')"> <img src="discord.png" alt="Discord" class="user-avatar" onclick="window.open('https://discordapp.com/users/1421127819697721355', '_blank')" /> <span class="username">Discord</span> </div> </div> <div class="spider"> <img src="spider.png" alt="Spider" /> </div> <div class="taskbar"> <div class="taskbar-icon" onclick="showNeofetchTerminal()" role="button" aria-label="Open terminal"> <svg role="img" aria-label="Terminal icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M4 17L10 11L4 5M12 19H20" stroke="#e0e0e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </svg> </div> <div class="taskbar-separator"></div> <div class="taskbar-time" id="time-display"></div> </div> <!-- Unified terminal popup --> <div class="kali-overlay" id="kali-overlay"> <div class="kali-terminal" id="kali-terminal"> <div class="kali-terminal-header" id="kali-drag-header"> <span>terminal@instakill.cc</span> <span class="kali-close-btn" onclick="hideKaliTerminal()">✕</span> </div> <div class="kali-terminal-body" id="kali-terminal-text"></div> </div> </div> <div class="popup popup-crt" id="user-popup" aria-hidden="true" role="dialog" aria-label="User info popup"> <div class="popup-header"> <div class="popup-title" id="popup-username"></div> <button class="popup-close" onclick="hidePopup()" aria-label="Close popup">✕</button> </div> <div class="popup-content" id="popup-content"></div> <div class="popup-scanlines"></div> </div> <audio id="startup-sound" preload="auto"> <source src="audio.mp3" type="audio/mpeg" /> </audio> <script src="audio.js"></script> <script src="desktop.js"></script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="desktop.css" />
+  <title>instakill.cc</title>
+  
+  <style>
+    /* Unified Kali-style terminal */
+    .kali-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .kali-terminal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #1c1c1c;
+      border: 2px solid #3b82f6;
+      border-radius: 6px;
+      width: 600px;
+      max-width: 90%;
+      box-shadow: 0 0 20px #3b82f6;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.3s ease-in-out;
+      cursor: default;
+    }
+
+    .kali-terminal-header {
+      background: #0f172a;
+      padding: 5px 10px;
+      color: #3b82f6;
+      font-family: monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: move;
+      user-select: none;
+    }
+
+    .kali-terminal-body {
+      background: #000;
+      color: #00ff9c;
+      padding: 15px;
+      font-family: monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      min-height: 200px;
+    }
+
+    .kali-close-btn {
+      cursor: pointer;
+      color: #ef4444;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body class="crt">
+
+  <!-- User Panel -->
+  <div class="user-panel">
+    <div class="user" onclick="showWeLoveTerminal()">
+      <img src="lobotomy.jpg" alt="Lobotomy" class="user-avatar" />
+      <span class="username">Lobotomy</span>
+    </div>
+
+    <div class="user" onclick="togglePopup(event, this, 'GitHub', 'github.png')">
+      <img src="github.png" alt="GitHub" class="user-avatar" />
+      <span class="username">GitHub</span>
+    </div>
+
+    <div class="user" onclick="togglePopup(event, this, 'Telegram', 'telegram.png')">
+      <img src="telegram.png" alt="Telegram" class="user-avatar" />
+      <span class="username">Telegram</span>
+    </div>
+
+    <div class="user" onclick="togglePopup(event, this, 'Discord', 'discord.png')">
+      <img src="discord.png" alt="Discord" class="user-avatar" />
+      <span class="username">Discord</span>
+    </div>
+  </div>
+
+  <!-- Spider Image -->
+  <div class="spider">
+    <img src="spider.png" alt="Spider" />
+  </div>
+
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <div class="taskbar-icon" onclick="showNeofetchTerminal()" role="button" aria-label="Open terminal">
+      <svg role="img" aria-label="Terminal icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 17L10 11L4 5M12 19H20" stroke="#e0e0e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="taskbar-separator"></div>
+    <div class="taskbar-time" id="time-display"></div>
+  </div>
+
+  <!-- Terminal Overlay -->
+  <div class="kali-overlay" id="kali-overlay">
+    <div class="kali-terminal" id="kali-terminal">
+      <div class="kali-terminal-header" id="kali-drag-header">
+        <span>terminal@instakill.cc</span>
+        <span class="kali-close-btn" onclick="hideKaliTerminal()">✕</span>
+      </div>
+      <div class="kali-terminal-body" id="kali-terminal-text"></div>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup popup-crt" id="user-popup" aria-hidden="true" role="dialog" aria-label="User info popup">
+    <div class="popup-header">
+      <div class="popup-title" id="popup-username"></div>
+      <button class="popup-close" onclick="hidePopup()" aria-label="Close popup">✕</button>
+    </div>
+    <div class="popup-content" id="popup-content"></div>
+    <div class="popup-scanlines"></div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="startup-sound" preload="auto">
+    <source src="audio.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Scripts -->
+  <script src="audio.js"></script>
+  <script src="desktop.js"></script>
+
+</body>
+</html>
