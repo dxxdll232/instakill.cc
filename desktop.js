@@ -27,7 +27,7 @@ function showTerminal() {
   `;
   terminalInfo.appendChild(commandLine);
 
-  const text = "whoarewe";
+  const text = "neofetch"; // Fake command
   const typingElement = document.getElementById('typing-text');
   let i = 0;
   
@@ -50,15 +50,14 @@ function showTerminal() {
 function getDeviceInfo() {
   const info = [];
 
-  info.push({ text: `User Agent: ${navigator.userAgent}`, color: "#FF4500" });
-  info.push({ text: `Platform: ${navigator.platform}`, color: "#FF8C00" });
-  info.push({ text: `Screen: ${window.screen.width}x${window.screen.height}`, color: "#FFA500" });
-
+  info.push(`OS: Kali GNU/Linux Rolling x86_64`);
+  info.push(`Host: ${navigator.platform}`);
+  info.push(`Kernel: Browser Kernel`);
+  info.push(`Uptime: ~${Math.floor(performance.now() / 1000 / 60)} mins`);
+  info.push(`Resolution: ${window.screen.width}x${window.screen.height}`);
   if (navigator.deviceMemory) {
-    info.push({ text: `RAM: ${navigator.deviceMemory} GB`, color: "#FF6347" });
+    info.push(`RAM: ${navigator.deviceMemory} GB`);
   }
-
-  info.push({ text: `Touch Support: ${'ontouchstart' in window}`, color: "#FF8C00" });
 
   try {
     const canvas = document.createElement("canvas");
@@ -66,12 +65,13 @@ function getDeviceInfo() {
     const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
     if (debugInfo) {
       const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
-      info.push({ text: `GPU: ${renderer}`, color: "#FF4500" });
+      info.push(`GPU: ${renderer}`);
     }
   } catch (e) {
-    info.push({ text: "GPU: Unknown", color: "#FF4500" });
+    info.push(`GPU: Unknown`);
   }
 
+  info.push(`Shell: bash`);
   return info;
 }
 
@@ -79,87 +79,60 @@ function showAsciiAndInfo() {
   const terminalAscii = document.getElementById('terminal-ascii');
   const terminalInfo = document.getElementById('terminal-info');
 
-  const asciiGirl = [
- "                 .---. ",
- "                /  0  \\ ",
- "                |  =  | ",
- "                | === | ",
- "           .---.| %*% |.---. ", 
- "          /  0  | %*% |  0  \\ ",
- "          | === |  =  | === | ",
- "          | %*% |  0  | %*% | ",
- "          | %*% |  =  | %*% | ",
- "          | === | === | === | ",
- "   ___    |  0  | %*% |  0  |    ___ ", 
- ".-'   '-. | *** | === | *** | .-'   '-. ",
- "/  &&&&&  \\| @#@ |  =  | @#@ |/  &&&&&  \\ ",
- "-_.. ~~~~  | *** |  0  | *** |  ~~~~ .._- ",
- "    '. %%%    0     _     0    %%% .' ",
- "      \\          __/ \\__          / ", 
- "       | %&%&%&  \\     /  &%&%&% | ",
- "       | ******  /_   _\\  ****** | ", 
- "       | &%&%&%    \\_/    %&%&%& | ",
- "       |          ~ ~ ~          | ",
- "       |       ..-------..       | ",
- "       | %  .''   /   \\   ''.  % | ",
- "       | % '.    {     }    .' % | ",
- "       | &%  ''.._\\   /_..''  %& | ",
- "        \\ %&%&    '''''    &%&% / ",
- "         '-. &%&%&%&%&%&%&%& .-' ",
- "           ''-............-'' ",
+  const asciiKali = [
+"        ▄▄▄▄▄",
+"       ███████",
+"       ▀█████▀",
+"        ▄████▄",
+"     ▄███▀▀▀███▄",
+"   ▄███▀     ▀███▄",
+" ▄███▀         ▀███▄",
+"▄███▀           ▀███▄",
   ];
 
   const asciiContainer = document.createElement('div');
-  asciiContainer.style.textAlign = 'center';
-  asciiContainer.style.margin = 'auto';
+  asciiContainer.style.textAlign = 'left';
   asciiContainer.style.fontFamily = 'monospace';
-  asciiContainer.style.lineHeight = '1.1';
+  asciiContainer.style.lineHeight = '1.2';
   asciiContainer.style.whiteSpace = 'pre';
   asciiContainer.style.opacity = '0';
   asciiContainer.style.transition = 'opacity 1s ease-in';
+  asciiContainer.style.display = 'inline-block';
+  asciiContainer.style.verticalAlign = 'top';
   
-  asciiGirl.forEach((line, index) => {
+  asciiKali.forEach((line) => {
     const lineElement = document.createElement('div');
-    const hue = 20 + (index * 5);
-    lineElement.style.color = `hsl(${hue}, 100%, 60%)`;
+    lineElement.style.color = "#0F9";
     lineElement.textContent = line;
     asciiContainer.appendChild(lineElement);
   });
 
   terminalAscii.appendChild(asciiContainer);
-  
-  setTimeout(() => {
-    asciiContainer.style.opacity = '1';
-  }, 100);
 
-  // Dynamic Device Info
+  // Device info styled like neofetch
   const infoData = getDeviceInfo();
   const infoContainer = document.createElement("div");
-  infoContainer.style.margin = "auto";
+  infoContainer.style.fontFamily = "monospace";
+  infoContainer.style.lineHeight = "1.4";
+  infoContainer.style.marginLeft = "40px";
+  infoContainer.style.display = "inline-block";
+  infoContainer.style.verticalAlign = "top";
   infoContainer.style.opacity = "0";
   infoContainer.style.transition = "opacity 1s ease-in";
 
-  infoData.forEach((item, index) => {
-    const div = document.createElement("div");
-    div.className = "info-item";
-    div.style.setProperty("--delay", index + 1);
-    div.style.color = item.color;
-    div.textContent = item.text;
-    infoContainer.appendChild(div);
-  });
+  infoContainer.innerHTML = `
+    <div style="color:#0FF;">user@lobotomy</div>
+    <div style="color:#0FF;">-----------------</div>
+    ${infoData.map(line => `<div style="color:#FFF;">${line}</div>`).join("")}
+  `;
 
-  terminalInfo.appendChild(infoContainer);
+  terminalAscii.appendChild(infoContainer);
 
+  // Fade-in animations
   setTimeout(() => {
+    asciiContainer.style.opacity = '1';
     infoContainer.style.opacity = "1";
-    const items = infoContainer.querySelectorAll(".info-item");
-    items.forEach((item, index) => {
-      item.style.opacity = "0";
-      setTimeout(() => {
-        item.style.opacity = "1";
-      }, index * 200);
-    });
-  }, 500);
+  }, 100);
 }
 
 function hideTerminal() {
